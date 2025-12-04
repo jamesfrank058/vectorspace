@@ -1,19 +1,19 @@
 export default function Services() {
   const services = [
     {
-      title: "Structural & Civil Engineering",
+      title: "Structural & Civil Engineering Services",
       description: "Design, analysis, and supervision to ensure compliance and quality.",
     },
     {
-      title: "Project Management",
+      title: "Project Management Services",
       description: "End-to-end project oversight from concept to execution.",
     },
     {
-      title: "Architectural Design",
+      title: "Architectural Design Services",
       description: "Functional and aesthetic spaces tailored to client needs.",
     },
     {
-      title: "Sustainable Construction",
+      title: "Sustainable Construction Services",
       description: "Innovative green building technologies and materials.",
     },
   ]

@@ -10,7 +10,7 @@ export default function Hero() {
             Delivering innovative, sustainable, and cost-effective infrastructure across East Africa.
           </p>
           <a
-            href="#contact"
+            href="#projects"
             className="inline-block bg-accent text-accent-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"
           >
             View Projects
