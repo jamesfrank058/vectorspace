@@ -1,4 +1,4 @@
-import React from "react"
+import React, { JSX } from "react"
 
 const WHATSAPP_URL =
   "https://api.whatsapp.com/send/?phone=254746333285&text&type=phone_number&app_absent=0"
