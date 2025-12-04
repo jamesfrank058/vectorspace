@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react"
+import Socials from "./socials"
 
 export default function Footer() {
   return (
@@ -11,6 +12,7 @@ export default function Footer() {
               <span className="font-bold text-xl">VECTORSPACE</span>
             </div>
             <p className="text-muted-foreground">Engineering, Precision & Innovation</p>
+            <Socials />
           </div>
 
           <div>
