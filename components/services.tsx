@@ -1,20 +1,28 @@
 export default function Services() {
   const services = [
     {
-      title: "Structural & Civil Engineering Services",
-      description: "Design, analysis, and supervision to ensure compliance and quality.",
+      title: "Advanced Building Systems & Specialized Construction Works",
+      description: "Innovative construction solutions using EPS Technology, Beam-and-Block systems, and Precast Building Systems to deliver faster, stronger, and cost-efficient structures.",
     },
     {
-      title: "Project Management Services",
-      description: "End-to-end project oversight from concept to execution.",
+      title: "General Construction & Renovation Works",
+      description: "Comprehensive building and refurbishment services for residential homes, commercial offices, industrial facilities, and mixed-use developments.",
     },
     {
-      title: "Architectural Design Services",
+      title: "Costings (BQs) & System-Based Cost Comparisons",
+      description: "Detailed Bills of Quantities (BQs) and cost breakdowns comparing different construction systems to guide informed budgeting and project decisions.",
+    },
+    {
+      title: "Structural Integrity Assessments, Geotechnical Studies & Retrofitting Works",
+      description: "Expert evaluation of existing structures, subsurface investigations, and tailored retrofitting solutions to enhance safety, performance, and lifespan.",
+    },
+    {
+      title: "Civil & Structural Engineering Services",
+      description: "Design, analysis, and supervision to ensure compliance, stability, and quality throughout every project.",
+    },
+    {
+      title: "Architectural Planning & Design Services",
       description: "Functional and aesthetic spaces tailored to client needs.",
-    },
-    {
-      title: "Sustainable Construction Services",
-      description: "Innovative green building technologies and materials.",
     },
   ]
 

@@ -1,10 +1,19 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsOpen(false)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <header className="sticky top-0 z-50 bg-card border-b border-border">

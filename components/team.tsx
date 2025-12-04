@@ -28,19 +28,6 @@ export default function Team() {
       image: "/structural-engineer-brian-kinyanjui.jpg",
     },
     {
-      name: "Samuel Eshifulula",
-      role: "Business Administrator",
-      qualifications: "BBA, HR & Management",
-      details: {
-        position: "Project Management & Administration",
-        education: "Bachelor of Business Administration",
-        experience: "3+ years in project management",
-        specialization: "Business Operations & HR Management",
-        achievement: "Project Coordination & Team Leadership",
-      },
-      image: "/business-administrator-samuel-eshifulula.jpg",
-    },
-    {
       name: "Diana Adhiambo",
       role: "Quantity Surveyor",
       qualifications: "BSc QS",
