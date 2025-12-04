@@ -1,8 +1,8 @@
 import React from "react"
 
-const FB_URL = "https://www.facebook.com/vectorspace"
-const IG_URL = "https://www.instagram.com/vectorspace"
-const TT_URL = "https://www.tiktok.com/@vectorspace"
+const FB_URL = "https://www.facebook.com/share/1D7zWuTwbQ/"
+const IG_URL = "https://www.instagram.com/vectorspace_limited?igsh=cmo0NTI3aWJqNThn"
+const TT_URL = "https://vm.tiktok.com/ZMHTcd8RvuPFk-Mkios/"
 
 export default function Socials() {
   return (
