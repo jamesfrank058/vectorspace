@@ -96,6 +96,22 @@ export default function Contact() {
                   <p className="text-muted-foreground">Holidays: Closed</p>
                 </div>
               </div>
+
+              <div className="mt-6">
+                <h4 className="font-bold text-foreground mb-4">Our Location</h4>
+                <div className="aspect-video w-full rounded-lg overflow-hidden border border-border">
+                  <iframe
+                    src="https://maps.google.com/maps?q=CK+Business+Center+Ruiru&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="CK Business Center Ruiru Location"
+                  ></iframe>
+                </div>
+              </div>
             </div>
           </div>
 
