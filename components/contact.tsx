@@ -53,7 +53,7 @@ export default function Contact() {
 
             <div className="space-y-6">
               <div className="flex gap-4">
-                <Phone className="text-accent flex-shrink-0 mt-1" size={24} />
+                <Phone className="text-accent shrink-0 mt-1" size={24} />
                 <div>
                   <h4 className="font-bold text-foreground">Call Us</h4>
                   <a href="tel:+254746333285" className="text-accent hover:underline">
@@ -63,7 +63,7 @@ export default function Contact() {
               </div>
 
               <div className="flex gap-4">
-                <Mail className="text-accent flex-shrink-0 mt-1" size={24} />
+                <Mail className="text-accent shrink-0 mt-1" size={24} />
                 <div>
                   <h4 className="font-bold text-foreground">Email Us</h4>
                   <a href="mailto:info@vectorspace.co.ke" className="text-accent hover:underline">
@@ -73,7 +73,7 @@ export default function Contact() {
               </div>
 
               <div className="flex gap-4">
-                <MapPin className="text-accent flex-shrink-0 mt-1" size={24} />
+                <MapPin className="text-accent shrink-0 mt-1" size={24} />
                 <div>
                   <h4 className="font-bold text-foreground">Our Office</h4>
                   <a
@@ -88,7 +88,7 @@ export default function Contact() {
               </div>
 
               <div className="flex gap-4">
-                <Clock className="text-accent flex-shrink-0 mt-1" size={24} />
+                <Clock className="text-accent shrink-0 mt-1" size={24} />
                 <div>
                   <h4 className="font-bold text-foreground">Working Hours</h4>
                   <p className="text-muted-foreground">Monday - Friday: 8:00 AM - 5:00 PM</p>
