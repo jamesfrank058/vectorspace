@@ -101,7 +101,7 @@ export default function Contact() {
                 <h4 className="font-bold text-foreground mb-4">Our Location</h4>
                 <div className="aspect-video w-full rounded-lg overflow-hidden border border-border">
                   <iframe
-                    src="https://maps.google.com/maps?q=CK+Business+Center+Ruiru&output=embed"
+                    src="https://maps.google.com/maps?q=CK+Business+Center+Ruiru&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
