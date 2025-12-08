@@ -1,3 +1,5 @@
+import { Award, Lightbulb, Trophy, Users, Eye, Target } from "lucide-react"
+
 export default function About() {
   return (
     <section id="about" className="py-20 bg-background">
@@ -41,14 +43,20 @@ export default function About() {
         <div className="bg-card p-12 rounded-lg border border-border">
           <div className="grid md:grid-cols-2 gap-12 mb-12">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
+              <div className="flex items-center gap-3 mb-4">
+                <Eye className="w-8 h-8 text-accent" />
+                <h3 className="text-2xl font-bold text-foreground">Our Vision</h3>
+              </div>
               <p className="text-muted-foreground leading-relaxed">
                 To be a leading force in innovative, sustainable, and cost-effective engineering solutions transforming
                 built environments across East Africa.
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
+              <div className="flex items-center gap-3 mb-4">
+                <Target className="w-8 h-8 text-accent" />
+                <h3 className="text-2xl font-bold text-foreground">Our Mission</h3>
+              </div>
               <p className="text-muted-foreground leading-relaxed">
                 Deliver high-quality, structurally sound infrastructure through cutting-edge design, project management
                 excellence, and alternative building technologies.
@@ -58,21 +66,33 @@ export default function About() {
 
           <h3 className="text-2xl font-bold text-foreground mb-8">Why Choose VectorSpace?</h3>
           <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="font-bold text-foreground mb-2">Technical Excellence</h4>
-              <p className="text-muted-foreground">Registered with NCA and accredited by EBK & IEK</p>
+            <div className="flex items-start gap-3">
+              <Award className="w-6 h-6 text-accent mt-1 shrink-0" />
+              <div>
+                <h4 className="font-bold text-foreground mb-2">Technical Excellence</h4>
+                <p className="text-muted-foreground">Registered with NCA and accredited by EBK & IEK</p>
+              </div>
             </div>
-            <div>
-              <h4 className="font-bold text-foreground mb-2">Innovation-Driven</h4>
-              <p className="text-muted-foreground">Pioneering Alternative Building Materials & Technologies</p>
+            <div className="flex items-start gap-3">
+              <Lightbulb className="w-6 h-6 text-accent mt-1 shrink-0" />
+              <div>
+                <h4 className="font-bold text-foreground mb-2">Innovation-Driven</h4>
+                <p className="text-muted-foreground">Pioneering Alternative Building Materials & Technologies</p>
+              </div>
             </div>
-            <div>
-              <h4 className="font-bold text-foreground mb-2">Proven Track Record</h4>
-              <p className="text-muted-foreground">60+ projects completed across 10+ counties</p>
+            <div className="flex items-start gap-3">
+              <Trophy className="w-6 h-6 text-accent mt-1 shrink-0" />
+              <div>
+                <h4 className="font-bold text-foreground mb-2">Proven Track Record</h4>
+                <p className="text-muted-foreground">60+ projects completed across 10+ counties</p>
+              </div>
             </div>
-            <div>
-              <h4 className="font-bold text-foreground mb-2">Client-Centric</h4>
-              <p className="text-muted-foreground">Transparent communication and tailored solutions</p>
+            <div className="flex items-start gap-3">
+              <Users className="w-6 h-6 text-accent mt-1 shrink-0" />
+              <div>
+                <h4 className="font-bold text-foreground mb-2">Client-Centric</h4>
+                <p className="text-muted-foreground">Transparent communication and tailored solutions</p>
+              </div>
             </div>
           </div>
         </div>

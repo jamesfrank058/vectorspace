@@ -82,7 +82,7 @@ export default function Team() {
               key={member.name}
               className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border"
             >
-              <img src={member.image || "/placeholder.svg"} alt={member.name} className="w-full h-64 object-cover" />
+              <img src={member.image || "/placeholder.svg"} alt={member.name} className="w-full aspect-square object-cover" />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
                 <p className="text-accent font-semibold mb-1">{member.role}</p>
