@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { supabase } from "../lib/supabase"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,6 +15,8 @@ export default function Contact() {
     details: "",
     agreed: false,
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target
@@ -23,19 +26,45 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      service: "",
-      details: "",
-      agreed: false,
-    })
-    alert("Thank you for your inquiry! We will be in touch soon.")
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            full_name: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            service: formData.service,
+            details: formData.details,
+            agreed: formData.agreed,
+            created_at: new Date().toISOString(),
+          }
+        ])
+
+      if (error) throw error
+
+      setSubmitStatus("success")
+      // Reset form
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        service: "",
+        details: "",
+        agreed: false,
+      })
+    } catch (error: any) {
+      console.error("Error submitting form:", error)
+      console.error("Error details:", error?.message, error?.details, error?.hint)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -165,11 +194,12 @@ export default function Contact() {
                 className="w-full px-4 py-2 border border-border rounded-lg bg-secondary text-foreground focus:outline-none focus:border-accent"
               >
                 <option value="">Select a service</option>
-                <option value="structural">Structural Engineering</option>
-                <option value="project">Project Management</option>
-                <option value="architectural">Architectural Design</option>
-                <option value="construction">Construction</option>
-                <option value="consultation">Consultation</option>
+                <option value="advanced-building">Advanced Building Systems & Specialized Construction</option>
+                <option value="general-construction">General Construction & Renovation Works</option>
+                <option value="costings">Costings (BQs) & System-Based Cost Comparisons</option>
+                <option value="structural-assessment">Structural Integrity Assessments & Retrofitting</option>
+                <option value="civil-engineering">Civil & Structural Engineering Services</option>
+                <option value="architectural-design">Architectural Planning & Design Services</option>
               </select>
             </div>
 
@@ -207,10 +237,23 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="w-full bg-accent text-accent-foreground py-3 rounded-lg font-semibold hover:opacity-90 transition"
+              disabled={isSubmitting}
+              className="w-full bg-accent text-accent-foreground py-3 rounded-lg font-semibold hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit Inquiry
+              {isSubmitting ? "Submitting..." : "Submit Inquiry"}
             </button>
+
+            {submitStatus === "success" && (
+              <div className="text-green-600 text-center mt-4">
+                Thank you for your inquiry! We will be in touch soon.
+              </div>
+            )}
+
+            {submitStatus === "error" && (
+              <div className="text-red-600 text-center mt-4">
+                There was an error submitting your form. Please try again.
+              </div>
+            )}
           </form>
         </div>
       </div>
