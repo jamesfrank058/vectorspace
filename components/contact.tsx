@@ -32,21 +32,24 @@ export default function Contact() {
     setSubmitStatus("idle")
 
     try {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert([
-          {
-            full_name: formData.fullName,
-            email: formData.email,
-            phone: formData.phone,
-            service: formData.service,
-            details: formData.details,
-            agreed: formData.agreed,
-            created_at: new Date().toISOString(),
-          }
-        ])
+      // Only submit if we have a real Supabase client (not the build-time mock)
+      if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY) {
+        const { error } = await (supabase as any)
+          .from('contact_submissions')
+          .insert([
+            {
+              full_name: formData.fullName,
+              email: formData.email,
+              phone: formData.phone,
+              service: formData.service,
+              details: formData.details,
+              agreed: formData.agreed,
+              created_at: new Date().toISOString(),
+            }
+          ])
 
-      if (error) throw error
+        if (error) throw error
+      }
 
       setSubmitStatus("success")
       // Reset form
