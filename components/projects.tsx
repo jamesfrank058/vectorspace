@@ -40,6 +40,15 @@ export default function Projects() {
           ))}
         </div>
 
+        <div className="text-center mb-12">
+          <a
+            href="/projects"
+            className="inline-block bg-accent text-accent-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+          >
+            More
+          </a>
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center bg-card p-12 rounded-lg border border-border">
           <div>
             <p className="text-3xl font-bold text-accent">60+</p>

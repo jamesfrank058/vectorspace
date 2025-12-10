@@ -1,10 +1,13 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname, useRouter } from "next/navigation"
 import { Menu, X } from "lucide-react"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +17,18 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const handleNavigation = (anchor: string) => {
+    if (pathname === "/projects") {
+      router.push(`/#${anchor}`)
+    } else {
+      const element = document.getElementById(anchor)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+    setIsOpen(false)
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-card border-b border-border">
@@ -26,21 +41,21 @@ export default function Header() {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex gap-8">
-            <a href="#about" className="text-foreground hover:text-accent transition">
+            <button onClick={() => handleNavigation("about")} className="text-foreground hover:text-accent transition">
               About
-            </a>
-            <a href="#team" className="text-foreground hover:text-accent transition">
+            </button>
+            <button onClick={() => handleNavigation("team")} className="text-foreground hover:text-accent transition">
               Team
-            </a>
-            <a href="#services" className="text-foreground hover:text-accent transition">
+            </button>
+            <button onClick={() => handleNavigation("services")} className="text-foreground hover:text-accent transition">
               Services
-            </a>
-            <a href="#projects" className="text-foreground hover:text-accent transition">
+            </button>
+            <a href="/projects" className="text-foreground hover:text-accent transition">
               Projects
             </a>
-            <a href="#contact" className="text-foreground hover:text-accent transition">
+            <button onClick={() => handleNavigation("contact")} className="text-foreground hover:text-accent transition">
               Contact
-            </a>
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -52,21 +67,21 @@ export default function Header() {
         {/* Mobile Menu */}
         {isOpen && (
           <nav className="md:hidden pb-4 flex flex-col gap-4">
-            <a href="#about" className="text-foreground hover:text-accent transition">
+            <button onClick={() => handleNavigation("about")} className="text-foreground hover:text-accent transition text-left">
               About
-            </a>
-            <a href="#team" className="text-foreground hover:text-accent transition">
+            </button>
+            <button onClick={() => handleNavigation("team")} className="text-foreground hover:text-accent transition text-left">
               Team
-            </a>
-            <a href="#services" className="text-foreground hover:text-accent transition">
+            </button>
+            <button onClick={() => handleNavigation("services")} className="text-foreground hover:text-accent transition text-left">
               Services
-            </a>
-            <a href="#projects" className="text-foreground hover:text-accent transition">
+            </button>
+            <a href="/projects" className="text-foreground hover:text-accent transition">
               Projects
             </a>
-            <a href="#contact" className="text-foreground hover:text-accent transition">
+            <button onClick={() => handleNavigation("contact")} className="text-foreground hover:text-accent transition text-left">
               Contact
-            </a>
+            </button>
           </nav>
         )}
       </div>
