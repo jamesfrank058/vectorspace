@@ -33,7 +33,10 @@ export default function ProjectsPage() {
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border max-w-md">
-                  <img src={project.images[0]} alt="Main project image" className="w-full h-64 object-cover" />
+                  <img src={project.images[5]} alt="Main project image" className="w-full h-64 object-cover" />
+                  <div className="p-6 text-center">
+                    <p className="text-muted-foreground">This completed Ground + 3 Storey apartment project involved full structural design, council approvals, and thorough site supervision. Built using EPS Building Technology for both walls and slabs, the development also required specialized foundation treatment due to 2.4m of black cotton soil. Valued at KSh 60 million, the project was successfully delivered to high standards using efficient and modern construction methods.</p>
+                  </div>
                   <div className="p-6 text-center">
                     <p className="text-muted-foreground">Click to view project gallery</p>
                   </div>
