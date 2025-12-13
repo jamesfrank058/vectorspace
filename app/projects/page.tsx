@@ -20,7 +20,7 @@ export default function ProjectsPage() {
 
   const kaziProject = {
     title: "4 Bedroom Maisonette",
-    description: "A comprehensive construction project showcasing our expertise in modern building techniques and project management.",
+    description: "This ongoing project is located in Kwa Maiko, Kiambu County, and involves comprehensive architectural and structural design, council approvals, as well as full construction and supervision. The development utilizes EPS Building Technology for both walls and slabs, incorporating a flat roof design to enhance efficiency and modern aesthetics. The project has an estimated value of KSh 10 million and is currently under active implementation.",
     images: [
       "/kazi 1.jpeg",
       "/kazi 2.jpeg",
