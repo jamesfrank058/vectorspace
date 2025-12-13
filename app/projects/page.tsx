@@ -37,6 +37,25 @@ export default function ProjectsPage() {
     ]
   }
 
+  const jobProject = {
+    title: "5 Bedroom Maisonette",
+    description: "This completed project is located in Kahaini, Murang’a County, and involved structural design and full supervision. The development utilized EPS Building Technology for both walls and slabs, featuring a flat roof design that ensured structural efficiency and durability. The project was successfully delivered with a total value of KSh 18 million.",
+    images: [
+      "/job 1.jpeg",
+      "/job 2.jpeg",
+      "/job 3.jpeg",
+      "/job 4.jpeg",
+      "/job 5.jpeg",
+      "/job 6.jpeg",
+      "/job 7.jpeg",
+      "/job 8.jpeg",
+      "/job 9.jpeg",
+      "/job 10.jpeg",
+      "/job 11.jpeg",
+      "/job 12.jpeg",
+    ]
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground dark">
       <Header />
@@ -48,7 +67,7 @@ export default function ProjectsPage() {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{project.description}</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
