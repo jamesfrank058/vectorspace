@@ -50,9 +50,9 @@ export default function Header() {
             <button onClick={() => handleNavigation("services")} className="text-foreground hover:text-accent transition">
               Services
             </button>
-            <a href="/projects" className="text-foreground hover:text-accent transition">
+            <button onClick={() => handleNavigation("projects")} className="text-foreground hover:text-accent transition">
               Projects
-            </a>
+            </button>
             <button onClick={() => handleNavigation("contact")} className="text-foreground hover:text-accent transition">
               Contact
             </button>
