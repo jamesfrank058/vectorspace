@@ -47,11 +47,6 @@ export default function ProjectsPage() {
       "/job 5.jpeg",
       "/job 6.jpeg",
       "/job 7.jpeg",
-      "/job 8.jpeg",
-      "/job 9.jpeg",
-      "/job 10.jpeg",
-      "/job 11.jpeg",
-      "/job 12.jpeg",
     ]
   }
 
