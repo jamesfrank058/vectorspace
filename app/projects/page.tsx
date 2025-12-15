@@ -30,7 +30,6 @@ export default function ProjectsPage() {
       "/kazi 6.jpeg",
       "/kazi 7.jpeg",
       "/kazi 8.jpeg",
-      "/kazi 9.jpeg",
       "/kazi 10.jpeg",
       "/kazi 11.jpeg",
       "/kazi 12.jpeg",
