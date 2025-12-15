@@ -1,24 +1,45 @@
+
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import { Menu, X } from "lucide-react"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isInteracting, setIsInteracting] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsOpen(false)
+      // Clear any existing timeout
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current)
+      }
+      
+      // Set a timeout to close menu after scroll stops
+      scrollTimeoutRef.current = setTimeout(() => {
+        if (!isInteracting) {
+          setIsOpen(false)
+        }
+      }, 150) // Wait 150ms after scroll stops
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current)
+      }
+    }
+  }, [isInteracting])
+
 
   const handleNavigation = (anchor: string) => {
+    setIsInteracting(true)
+    
     if (pathname === "/projects") {
       router.push(`/#${anchor}`)
     } else {
@@ -27,7 +48,22 @@ export default function Header() {
         element.scrollIntoView({ behavior: 'smooth' })
       }
     }
-    setIsOpen(false)
+    
+    // Reset interaction state after navigation
+    setTimeout(() => {
+      setIsOpen(false)
+      setIsInteracting(false)
+    }, 100)
+  }
+
+  const handleMenuToggle = () => {
+    setIsInteracting(true)
+    setIsOpen(!isOpen)
+    
+    // Reset interaction state after toggle
+    setTimeout(() => {
+      setIsInteracting(false)
+    }, 200)
   }
 
   return (
@@ -58,15 +94,19 @@ export default function Header() {
             </button>
           </nav>
 
+
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+          <button className="md:hidden" onClick={handleMenuToggle} aria-label="Toggle menu">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
+
         {/* Mobile Menu */}
         {isOpen && (
-          <nav className="md:hidden pb-4 flex flex-col gap-4">
+          <nav className="md:hidden pb-4 flex flex-col gap-4"
+               onMouseEnter={() => setIsInteracting(true)}
+               onMouseLeave={() => setIsInteracting(false)}>
             <button onClick={() => handleNavigation("about")} className="text-foreground hover:text-accent transition text-left">
               About
             </button>
