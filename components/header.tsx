@@ -102,28 +102,66 @@ export default function Header() {
         </div>
 
 
+
+
         {/* Mobile Menu */}
-        {isOpen && (
-          <nav className="md:hidden pb-4 flex flex-col gap-4"
-               onMouseEnter={() => setIsInteracting(true)}
-               onMouseLeave={() => setIsInteracting(false)}>
-            <button onClick={() => handleNavigation("about")} className="text-foreground hover:text-accent transition text-left">
-              About
-            </button>
-            <button onClick={() => handleNavigation("team")} className="text-foreground hover:text-accent transition text-left">
-              Team
-            </button>
-            <button onClick={() => handleNavigation("services")} className="text-foreground hover:text-accent transition text-left">
-              Services
-            </button>
-            <button onClick={() => handleNavigation("projects")} className="text-foreground hover:text-accent transition">
-              Projects
-            </button>
-            <button onClick={() => handleNavigation("contact")} className="text-foreground hover:text-accent transition text-left">
-              Contact
-            </button>
-          </nav>
-        )}
+        <div className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+
+
+          <div className="border-t border-border bg-card/95 backdrop-blur-sm shadow-lg">
+            <nav className="py-2 flex flex-col"
+                 onMouseEnter={() => setIsInteracting(true)}
+                 onMouseLeave={() => setIsInteracting(false)}>
+              <button 
+                onClick={() => handleNavigation("about")} 
+                className="px-6 py-4 text-left text-foreground hover:text-accent hover:bg-accent/10 transition-all duration-200 font-medium border-l-4 border-transparent hover:border-accent hover:pl-8 relative group"
+              >
+                <span className="flex items-center">
+                  <span className="w-2 h-2 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 mr-3"></span>
+                  About
+                </span>
+              </button>
+              <button 
+                onClick={() => handleNavigation("team")} 
+                className="px-6 py-4 text-left text-foreground hover:text-accent hover:bg-accent/10 transition-all duration-200 font-medium border-l-4 border-transparent hover:border-accent hover:pl-8 relative group"
+              >
+                <span className="flex items-center">
+                  <span className="w-2 h-2 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 mr-3"></span>
+                  Team
+                </span>
+              </button>
+              <button 
+                onClick={() => handleNavigation("services")} 
+                className="px-6 py-4 text-left text-foreground hover:text-accent hover:bg-accent/10 transition-all duration-200 font-medium border-l-4 border-transparent hover:border-accent hover:pl-8 relative group"
+              >
+                <span className="flex items-center">
+                  <span className="w-2 h-2 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 mr-3"></span>
+                  Services
+                </span>
+              </button>
+              <button 
+                onClick={() => handleNavigation("projects")} 
+                className="px-6 py-4 text-left text-foreground hover:text-accent hover:bg-accent/10 transition-all duration-200 font-medium border-l-4 border-transparent hover:border-accent hover:pl-8 relative group"
+              >
+                <span className="flex items-center">
+                  <span className="w-2 h-2 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 mr-3"></span>
+                  Projects
+                </span>
+              </button>
+              <button 
+                onClick={() => handleNavigation("contact")} 
+                className="px-6 py-4 text-left text-foreground hover:text-accent hover:bg-accent/10 transition-all duration-200 font-medium border-l-4 border-transparent hover:border-accent hover:pl-8 relative group"
+              >
+                <span className="flex items-center">
+                  <span className="w-2 h-2 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 mr-3"></span>
+                  Contact
+                </span>
+              </button>
+            </nav>
+          </div>
+        </div>
       </div>
     </header>
   )
