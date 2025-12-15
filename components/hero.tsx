@@ -6,7 +6,7 @@ export default function Hero() {
     <section 
       className="min-h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat"
       style={{ 
-        backgroundImage: 'url(/background.jpeg)',
+        backgroundImage: 'url(/background.webp)',
         backgroundPosition: 'center center',
         backgroundSize: 'cover'
       }}
