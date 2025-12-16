@@ -81,29 +81,30 @@ export default function Team() {
           {teamMembers.map((member) => (
             <div
               key={member.name}
-              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-light-gray hover:border-brand-blue group"
+              className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-light-gray hover:border-brand-blue group"
+              style={{ backgroundColor: "#00006c" }}
             >
               <img src={member.image || "/placeholder.svg"} alt={member.name} className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300" />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-dark-gray mb-1 group-hover:text-brand-blue transition-colors duration-300">{member.name}</h3>
+                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-gold-orange transition-colors duration-300">{member.name}</h3>
                 <p className="text-gold-orange font-semibold mb-1">{member.role}</p>
-                <p className="text-medium-gray text-sm mb-4">{member.qualifications}</p>
+                <p className="text-gray-300 text-sm mb-4">{member.qualifications}</p>
 
-                <div className="space-y-2 text-sm text-medium-gray">
+                <div className="space-y-2 text-sm text-gray-200">
                   <p>
-                    <strong className="text-dark-gray">Role:</strong> {member.details.position}
+                    <strong className="text-gold-orange">Role:</strong> {member.details.position}
                   </p>
                   <p>
-                    <strong className="text-dark-gray">Education:</strong> {member.details.education}
+                    <strong className="text-gold-orange">Education:</strong> {member.details.education}
                   </p>
                   <p>
-                    <strong className="text-dark-gray">Experience:</strong> {member.details.experience}
+                    <strong className="text-gold-orange">Experience:</strong> {member.details.experience}
                   </p>
                   <p>
-                    <strong className="text-dark-gray">Specialization:</strong> {member.details.specialization}
+                    <strong className="text-gold-orange">Specialization:</strong> {member.details.specialization}
                   </p>
                   <p>
-                    <strong className="text-dark-gray">Key Achievement:</strong> {member.details.achievement}
+                    <strong className="text-gold-orange">Key Achievement:</strong> {member.details.achievement}
                   </p>
                 </div>
               </div>
