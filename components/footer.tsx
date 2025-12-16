@@ -3,60 +3,61 @@ import Socials from "./socials"
 
 export default function Footer() {
   return (
-    <footer className="bg-card border-t border-border text-foreground py-12">
+
+    <footer className="bg-navy-background text-white py-12 border-t border-dark-gray">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-accent rounded"></div>
-              <span className="font-bold text-xl">VECTORSPACE</span>
-            </div>
-            <p className="text-muted-foreground">Engineering, Precision & Innovation</p>
+            <div className="flex items-center gap-2">
+            <img src="/icon-light-32x32.png" alt="VectorSpace Logo" className="w-8 h-8 rounded" />
+            <span className="font-bold text-xl text-foreground">VECTORSPACE</span>
+          </div>
+            <p className="text-light-gray">Engineering, Precision & Innovation</p>
             <Socials />
           </div>
 
           <div>
-            <h4 className="font-bold mb-4">Quick Links</h4>
-            <div className="space-y-2 text-muted-foreground">
-              <a href="#about" className="block hover:text-foreground transition">
+            <h4 className="font-bold mb-4 text-white">Quick Links</h4>
+            <div className="space-y-2 text-light-gray">
+              <a href="#about" className="block hover:text-gold-orange transition-colors duration-300">
                 About
               </a>
-              <a href="#services" className="block hover:text-foreground transition">
+              <a href="#services" className="block hover:text-gold-orange transition-colors duration-300">
                 Services
               </a>
-              <a href="#projects" className="block hover:text-foreground transition">
+              <a href="#projects" className="block hover:text-gold-orange transition-colors duration-300">
                 Projects
               </a>
-              <a href="#contact" className="block hover:text-foreground transition">
+              <a href="#contact" className="block hover:text-gold-orange transition-colors duration-300">
                 Contact
               </a>
             </div>
           </div>
 
           <div>
-            <h4 className="font-bold mb-4">Contact</h4>
-            <div className="space-y-3 text-muted-foreground">
+            <h4 className="font-bold mb-4 text-white">Contact</h4>
+            <div className="space-y-3 text-light-gray">
               <div className="flex items-center gap-2">
-                <Phone size={18} />
-                <a href="tel:+254746333285" className="hover:text-foreground transition">
+                <Phone size={18} className="text-gold-orange" />
+                <a href="tel:+254746333285" className="hover:text-gold-orange transition-colors duration-300">
                   +254 746 333 285
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Mail size={18} />
-                <a href="mailto:info@vectorspace.co.ke" className="hover:text-foreground transition">
+                <Mail size={18} className="text-gold-orange" />
+                <a href="mailto:info@vectorspace.co.ke" className="hover:text-gold-orange transition-colors duration-300">
                   info@vectorspace.co.ke
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin size={18} />
+                <MapPin size={18} className="text-gold-orange" />
                 <span>CK Business Center Ruiru</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 text-center text-muted-foreground">
+        <div className="border-t border-dark-gray pt-8 text-center text-light-gray">
           <p>&copy; 2025 VectorSpace Limited. All rights reserved.</p>
         </div>
       </div>

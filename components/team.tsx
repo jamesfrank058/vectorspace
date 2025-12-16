@@ -68,41 +68,42 @@ export default function Team() {
     },
   ]
 
+
   return (
-    <section id="team" className="py-20 bg-secondary">
+    <section id="team" className="py-20 bg-off-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Leadership Team</h2>
-          <p className="text-muted-foreground text-lg">Meet the experts driving our success</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-4">Our Leadership Team</h2>
+          <p className="text-medium-gray text-lg">Meet the experts driving our success</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member) => (
             <div
               key={member.name}
-              className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border"
+              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-light-gray hover:border-brand-blue group"
             >
-              <img src={member.image || "/placeholder.svg"} alt={member.name} className="w-full aspect-square object-cover" />
+              <img src={member.image || "/placeholder.svg"} alt={member.name} className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300" />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
-                <p className="text-accent font-semibold mb-1">{member.role}</p>
-                <p className="text-muted-foreground text-sm mb-4">{member.qualifications}</p>
+                <h3 className="text-xl font-bold text-dark-gray mb-1 group-hover:text-brand-blue transition-colors duration-300">{member.name}</h3>
+                <p className="text-gold-orange font-semibold mb-1">{member.role}</p>
+                <p className="text-medium-gray text-sm mb-4">{member.qualifications}</p>
 
-                <div className="space-y-2 text-sm text-muted-foreground">
+                <div className="space-y-2 text-sm text-medium-gray">
                   <p>
-                    <strong>Role:</strong> {member.details.position}
+                    <strong className="text-dark-gray">Role:</strong> {member.details.position}
                   </p>
                   <p>
-                    <strong>Education:</strong> {member.details.education}
+                    <strong className="text-dark-gray">Education:</strong> {member.details.education}
                   </p>
                   <p>
-                    <strong>Experience:</strong> {member.details.experience}
+                    <strong className="text-dark-gray">Experience:</strong> {member.details.experience}
                   </p>
                   <p>
-                    <strong>Specialization:</strong> {member.details.specialization}
+                    <strong className="text-dark-gray">Specialization:</strong> {member.details.specialization}
                   </p>
                   <p>
-                    <strong>Key Achievement:</strong> {member.details.achievement}
+                    <strong className="text-dark-gray">Key Achievement:</strong> {member.details.achievement}
                   </p>
                 </div>
               </div>

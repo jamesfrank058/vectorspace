@@ -134,13 +134,15 @@ export default function ProjectsPage() {
   }
 
   return (
+
     <div className="min-h-screen bg-background text-foreground dark">
       <Header />
 
-      <main className="py-20">
+      <main className="py-20 bg-off-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{project.title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">{project.title}</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{project.description}</p>
           </div>
 

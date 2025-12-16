@@ -71,48 +71,50 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-background">
+
+    <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Get In Touch</h2>
-        <p className="text-muted-foreground text-lg mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-4">Get In Touch</h2>
+        <p className="text-medium-gray text-lg mb-12">
           Ready to start your project? Contact us today for a free consultation
         </p>
 
         <div className="grid md:grid-cols-2 gap-12">
+
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-bold text-foreground mb-8">Contact Information</h3>
+            <h3 className="text-2xl font-bold text-dark-gray mb-8">Contact Information</h3>
 
             <div className="space-y-6">
               <div className="flex gap-4">
-                <Phone className="text-accent shrink-0 mt-1" size={24} />
+                <Phone className="text-gold-orange shrink-0 mt-1" size={24} />
                 <div>
-                  <h4 className="font-bold text-foreground">Call Us</h4>
-                  <a href="tel:+254746333285" className="text-accent hover:underline">
+                  <h4 className="font-bold text-dark-gray">Call Us</h4>
+                  <a href="tel:+254746333285" className="text-brand-blue hover:text-deep-blue transition-colors duration-300 hover:underline">
                     +254 746 333 285
                   </a>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <Mail className="text-accent shrink-0 mt-1" size={24} />
+                <Mail className="text-gold-orange shrink-0 mt-1" size={24} />
                 <div>
-                  <h4 className="font-bold text-foreground">Email Us</h4>
-                  <a href="mailto:info@vectorspace.co.ke" className="text-accent hover:underline">
+                  <h4 className="font-bold text-dark-gray">Email Us</h4>
+                  <a href="mailto:info@vectorspace.co.ke" className="text-brand-blue hover:text-deep-blue transition-colors duration-300 hover:underline">
                     info@vectorspace.co.ke
                   </a>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <MapPin className="text-accent shrink-0 mt-1" size={24} />
+                <MapPin className="text-gold-orange shrink-0 mt-1" size={24} />
                 <div>
-                  <h4 className="font-bold text-foreground">Our Office</h4>
+                  <h4 className="font-bold text-dark-gray">Our Office</h4>
                   <a
                     href="https://maps.google.com/?q=CK+Business+Center+Ruiru"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-accent hover:underline"
+                    className="text-brand-blue hover:text-deep-blue transition-colors duration-300 hover:underline"
                   >
                     CK Business Center Ruiru
                   </a>
@@ -120,18 +122,18 @@ export default function Contact() {
               </div>
 
               <div className="flex gap-4">
-                <Clock className="text-accent shrink-0 mt-1" size={24} />
+                <Clock className="text-gold-orange shrink-0 mt-1" size={24} />
                 <div>
-                  <h4 className="font-bold text-foreground">Working Hours</h4>
-                  <p className="text-muted-foreground">Monday - Friday: 8:00 AM - 5:00 PM</p>
-                  <p className="text-muted-foreground">Saturday: 9:00 AM - 1:00 PM</p>
-                  <p className="text-muted-foreground">Holidays: Closed</p>
+                  <h4 className="font-bold text-dark-gray">Working Hours</h4>
+                  <p className="text-medium-gray">Monday - Friday: 8:00 AM - 5:00 PM</p>
+                  <p className="text-medium-gray">Saturday: 9:00 AM - 1:00 PM</p>
+                  <p className="text-medium-gray">Holidays: Closed</p>
                 </div>
               </div>
 
               <div className="mt-6">
-                <h4 className="font-bold text-foreground mb-4">Our Location</h4>
-                <div className="aspect-video w-full rounded-lg overflow-hidden border border-border">
+                <h4 className="font-bold text-dark-gray mb-4">Our Location</h4>
+                <div className="aspect-video w-full rounded-lg overflow-hidden border border-light-gray shadow-lg">
                   <iframe
                     src="https://maps.google.com/maps?q=CK+Business+Center+Ruiru&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
@@ -147,10 +149,11 @@ export default function Contact() {
             </div>
           </div>
 
+
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-6 bg-card p-8 rounded-lg border border-border">
+          <form onSubmit={handleSubmit} className="space-y-6 bg-off-white p-8 rounded-lg border border-light-gray shadow-lg">
             <div>
-              <label className="block text-foreground font-semibold mb-2">
+              <label className="block text-dark-gray font-semibold mb-2">
                 Full Name <span className="text-red-500">*</span>
               </label>
               <input
@@ -159,12 +162,12 @@ export default function Contact() {
                 value={formData.fullName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-border rounded-lg bg-secondary text-foreground focus:outline-none focus:border-accent"
+                className="w-full px-4 py-2 border border-light-gray rounded-lg bg-white text-dark-gray focus:outline-none focus:border-brand-blue transition-colors duration-300"
               />
             </div>
 
             <div>
-              <label className="block text-foreground font-semibold mb-2">
+              <label className="block text-dark-gray font-semibold mb-2">
                 Email <span className="text-red-500">*</span>
               </label>
               <input
@@ -173,28 +176,28 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-border rounded-lg bg-secondary text-foreground focus:outline-none focus:border-accent"
+                className="w-full px-4 py-2 border border-light-gray rounded-lg bg-white text-dark-gray focus:outline-none focus:border-brand-blue transition-colors duration-300"
               />
             </div>
 
             <div>
-              <label className="block text-foreground font-semibold mb-2">Phone</label>
+              <label className="block text-dark-gray font-semibold mb-2">Phone</label>
               <input
                 type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-border rounded-lg bg-secondary text-foreground focus:outline-none focus:border-accent"
+                className="w-full px-4 py-2 border border-light-gray rounded-lg bg-white text-dark-gray focus:outline-none focus:border-brand-blue transition-colors duration-300"
               />
             </div>
 
             <div>
-              <label className="block text-foreground font-semibold mb-2">Service Interest</label>
+              <label className="block text-dark-gray font-semibold mb-2">Service Interest</label>
               <select
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-border rounded-lg bg-secondary text-foreground focus:outline-none focus:border-accent"
+                className="w-full px-4 py-2 border border-light-gray rounded-lg bg-white text-dark-gray focus:outline-none focus:border-brand-blue transition-colors duration-300"
               >
                 <option value="">Select a service</option>
                 <option value="advanced-building">Advanced Building Systems & Specialized Construction</option>
@@ -207,7 +210,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="block text-foreground font-semibold mb-2">
+              <label className="block text-dark-gray font-semibold mb-2">
                 Project Details <span className="text-red-500">*</span>
               </label>
               <textarea
@@ -216,7 +219,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full px-4 py-2 border border-border rounded-lg bg-secondary text-foreground focus:outline-none focus:border-accent"
+                className="w-full px-4 py-2 border border-light-gray rounded-lg bg-white text-dark-gray focus:outline-none focus:border-brand-blue transition-colors duration-300"
               />
             </div>
 
@@ -228,11 +231,11 @@ export default function Contact() {
                 checked={formData.agreed}
                 onChange={handleChange}
                 required
-                className="mt-1"
+                className="mt-1 text-brand-blue"
               />
-              <label htmlFor="agreed" className="text-sm text-muted-foreground">
+              <label htmlFor="agreed" className="text-sm text-medium-gray">
                 I agree to the processing of my personal data as described in the{" "}
-                <a href="/privacy" className="text-accent hover:underline">
+                <a href="/privacy" className="text-brand-blue hover:text-deep-blue transition-colors duration-300 hover:underline">
                   Privacy Policy
                 </a>
               </label>
@@ -241,19 +244,20 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-accent text-accent-foreground py-3 rounded-lg font-semibold hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gold-orange text-white py-3 rounded-lg font-semibold hover:bg-gold-orange/90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
             >
               {isSubmitting ? "Submitting..." : "Submit Inquiry"}
             </button>
 
+
             {submitStatus === "success" && (
-              <div className="text-green-600 text-center mt-4">
+              <div className="text-green-600 text-center mt-4 bg-green-50 p-3 rounded-lg border border-green-200">
                 Thank you for your inquiry! We will be in touch soon.
               </div>
             )}
 
             {submitStatus === "error" && (
-              <div className="text-red-600 text-center mt-4">
+              <div className="text-red-600 text-center mt-4 bg-red-50 p-3 rounded-lg border border-red-200">
                 There was an error submitting your form. Please try again.
               </div>
             )}

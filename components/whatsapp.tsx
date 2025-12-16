@@ -10,9 +10,10 @@ export default function WhatsApp(): JSX.Element {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
+
       className="whatsapp-fab"
     >
-      <img src="/whatsapp.svg" alt="WhatsApp" />
+      <img src="/icons/whatsapp.svg" alt="WhatsApp" />
     </a>
   )
 }

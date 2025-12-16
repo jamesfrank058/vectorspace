@@ -21,9 +21,10 @@ export default function Hero() {
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto text-balance drop-shadow-md">
             Delivering innovative, sustainable, and cost-effective infrastructure across East Africa.
           </p>
+
           <a
             href="#projects"
-            className="inline-block bg-accent text-accent-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition shadow-lg"
+            className="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-deep-blue transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             View Projects
           </a>

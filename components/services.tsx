@@ -35,21 +35,22 @@ export default function Services() {
   ]
 
   return (
-    <section id="services" className="py-20 bg-background">
+
+    <section id="services" className="py-20 bg-off-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Services</h2>
-        <p className="text-muted-foreground text-lg mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-4">Our Services</h2>
+        <p className="text-medium-gray text-lg mb-12">
           Comprehensive engineering solutions tailored to your specific needs
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((service) => (
-            <div key={service.title} className="border-l-4 border-accent pl-6 py-4">
+            <div key={service.title} className="border-l-4 border-gold-orange pl-6 py-4 bg-white rounded-r-lg shadow-sm hover:shadow-md transition-all duration-300 hover:border-brand-blue">
               <div className="flex items-center gap-3 mb-3">
-                <service.icon className="w-6 h-6 text-accent" />
-                <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
+                <service.icon className="w-6 h-6 text-gold-orange" />
+                <h3 className="text-xl font-bold text-dark-gray">{service.title}</h3>
               </div>
-              <p className="text-muted-foreground">{service.description}</p>
+              <p className="text-medium-gray">{service.description}</p>
             </div>
           ))}
         </div>
