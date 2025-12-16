@@ -151,9 +151,13 @@ export default function Contact() {
 
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-6 bg-off-white p-8 rounded-lg border border-light-gray shadow-lg">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6 p-8 rounded-lg border shadow-lg"
+            style={{ backgroundColor: "#00006c", borderColor: "transparent" }}
+          >
             <div>
-              <label className="block text-dark-gray font-semibold mb-2">
+              <label className="block text-white font-semibold mb-2">
                 Full Name <span className="text-red-500">*</span>
               </label>
               <input
@@ -167,7 +171,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="block text-dark-gray font-semibold mb-2">
+              <label className="block text-white font-semibold mb-2">
                 Email <span className="text-red-500">*</span>
               </label>
               <input
@@ -181,7 +185,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="block text-dark-gray font-semibold mb-2">Phone</label>
+              <label className="block text-white font-semibold mb-2">Phone</label>
               <input
                 type="tel"
                 name="phone"
@@ -192,7 +196,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="block text-dark-gray font-semibold mb-2">Service Interest</label>
+              <label className="block text-white font-semibold mb-2">Service Interest</label>
               <select
                 name="service"
                 value={formData.service}
@@ -210,7 +214,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="block text-dark-gray font-semibold mb-2">
+              <label className="block text-white font-semibold mb-2">
                 Project Details <span className="text-red-500">*</span>
               </label>
               <textarea
@@ -233,7 +237,7 @@ export default function Contact() {
                 required
                 className="mt-1 text-brand-blue"
               />
-              <label htmlFor="agreed" className="text-sm text-medium-gray">
+              <label htmlFor="agreed" className="text-sm text-gray-200">
                 I agree to the processing of my personal data as described in the{" "}
                 <a href="/privacy" className="text-brand-blue hover:text-deep-blue transition-colors duration-300 hover:underline">
                   Privacy Policy

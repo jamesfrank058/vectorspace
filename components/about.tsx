@@ -109,9 +109,13 @@ export default function About() {
               { title: "Quality", desc: "Committed to excellence that exceeds industry standards" },
               { title: "Safety", desc: "Adhering to all regulatory requirements and best practices" },
             ].map((value) => (
-              <div key={value.title} className="bg-off-white p-6 rounded-lg border border-light-gray hover:border-brand-blue transition-colors duration-300 group">
-                <h4 className="font-bold text-dark-gray mb-2 group-hover:text-brand-blue transition-colors duration-300">{value.title}</h4>
-                <p className="text-medium-gray text-sm">{value.desc}</p>
+              <div
+                key={value.title}
+                className="p-6 rounded-lg border-l-4 border-gold-orange hover:border-brand-blue transition-colors duration-300 group"
+                style={{ backgroundColor: "#00006c" }}
+              >
+                <h4 className="font-bold text-white mb-2 group-hover:text-gold-orange transition-colors duration-300">{value.title}</h4>
+                <p className="text-gray-200 text-sm">{value.desc}</p>
               </div>
             ))}
           </div>

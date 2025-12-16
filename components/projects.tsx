@@ -31,12 +31,13 @@ export default function Projects() {
 
             <div
               key={project.title}
-              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-light-gray hover:border-brand-blue group"
+              className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-light-gray hover:border-brand-blue group"
+              style={{ backgroundColor: "#00006c" }}
             >
               <img src={project.image || "/placeholder.svg"} alt={project.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-dark-gray mb-2">{project.title}</h3>
-                <p className="text-medium-gray">{project.description}</p>
+                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                <p className="text-gray-200">{project.description}</p>
               </div>
             </div>
           ))}
@@ -53,22 +54,22 @@ export default function Projects() {
         </div>
 
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center bg-white p-12 rounded-lg border border-light-gray shadow-lg">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center p-12 rounded-lg border shadow-lg" style={{ backgroundColor: "#00006c", borderColor: "transparent" }}>
           <div>
             <p className="text-3xl font-bold text-gold-orange">60+</p>
-            <p className="text-medium-gray mt-2">Projects Completed</p>
+            <p className="text-gray-200 mt-2">Projects Completed</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-brand-blue">9+</p>
-            <p className="text-medium-gray mt-2">Years of Experience</p>
+            <p className="text-3xl font-bold text-black">9+</p>
+            <p className="text-gray-200 mt-2">Years of Experience</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-deep-blue">10+</p>
-            <p className="text-medium-gray mt-2">Counties Served</p>
+            <p className="text-3xl font-bold text-black">10+</p>
+            <p className="text-gray-200 mt-2">Counties Served</p>
           </div>
           <div>
             <p className="text-3xl font-bold text-gold-orange">30+</p>
-            <p className="text-medium-gray mt-2">Team Members</p>
+            <p className="text-gray-200 mt-2">Team Members</p>
           </div>
         </div>
       </div>
