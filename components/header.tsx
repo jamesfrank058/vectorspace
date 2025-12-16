@@ -7,41 +7,42 @@ import { usePathname, useRouter } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import Socials from "./socials"
 
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isInteracting, setIsInteracting] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const menuRef = useRef<HTMLDivElement>(null)
 
+
+  // Close menu when clicking outside or pressing ESC
   useEffect(() => {
-    const handleScroll = () => {
-      // Clear any existing timeout
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current)
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
       }
-      
-      // Set a timeout to close menu after scroll stops
-      scrollTimeoutRef.current = setTimeout(() => {
-        if (!isInteracting) {
-          setIsOpen(false)
-        }
-      }, 150) // Wait 150ms after scroll stops
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current)
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false)
       }
     }
-  }, [isInteracting])
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+      document.addEventListener('keydown', handleKeyDown)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isOpen])
+
 
 
   const handleNavigation = (anchor: string) => {
-    setIsInteracting(true)
-    
     if (pathname === "/projects") {
       router.push(`/#${anchor}`)
     } else {
@@ -50,22 +51,11 @@ export default function Header() {
         element.scrollIntoView({ behavior: 'smooth' })
       }
     }
-    
-    // Reset interaction state after navigation
-    setTimeout(() => {
-      setIsOpen(false)
-      setIsInteracting(false)
-    }, 100)
+    setIsOpen(false)
   }
 
   const handleMenuToggle = () => {
-    setIsInteracting(true)
     setIsOpen(!isOpen)
-    
-    // Reset interaction state after toggle
-    setTimeout(() => {
-      setIsInteracting(false)
-    }, 200)
   }
 
   return (
@@ -112,16 +102,16 @@ export default function Header() {
 
 
 
+
         {/* Mobile Menu */}
-        <div className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}>
-
-
+        <div 
+          ref={menuRef}
+          className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+            isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
           <div className="border-t border-border bg-card/95 backdrop-blur-sm shadow-lg">
-            <nav className="py-2 flex flex-col"
-                 onMouseEnter={() => setIsInteracting(true)}
-                 onMouseLeave={() => setIsInteracting(false)}>
+            <nav className="py-2 flex flex-col">
               <button 
                 onClick={() => handleNavigation("about")} 
                 className="px-6 py-4 text-left text-foreground hover:text-accent hover:bg-accent/10 transition-all duration-200 font-medium border-l-4 border-transparent hover:border-accent hover:pl-8 relative group"
