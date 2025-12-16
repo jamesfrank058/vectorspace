@@ -54,18 +54,25 @@ export default function Header() {
     setIsOpen(false)
   }
 
+
   const handleMenuToggle = () => {
     setIsOpen(!isOpen)
+  }
+
+  const handleLogoClick = () => {
+    router.push('/')
+    setIsOpen(false)
   }
 
   return (
     <header className="sticky top-0 z-50 bg-card border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center gap-2">
+
+          <button onClick={handleLogoClick} className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer">
             <img src="/icon-light-32x32.png" alt="VectorSpace Logo" className="w-8 h-8 rounded" />
             <span className="font-bold text-xl text-foreground">VECTORSPACE</span>
-          </div>
+          </button>
 
 
           {/* Desktop Menu */}
