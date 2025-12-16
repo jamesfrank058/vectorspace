@@ -33,6 +33,7 @@ export default function Socials() {
         </svg>
       </a>
 
+
       <a
         href={TT_URL}
         target="_blank"
@@ -40,10 +41,7 @@ export default function Socials() {
         aria-label="VectorSpace on TikTok"
         className="text-foreground hover:text-accent transition"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M16 3h2.5a4.5 4.5 0 0 0 0 9H18v-2h.5a2.5 2.5 0 0 1 0-5H16V3z" />
-          <path d="M8 8v8a4 4 0 1 0 4-4V6a6 6 0 1 1-4 2z" />
-        </svg>
+        <img src="/tiktok-svgrepo-com.svg" alt="TikTok" className="w-6 h-6" />
       </a>
     </div>
   )
