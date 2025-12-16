@@ -7,8 +7,10 @@
 
 :root {
   /* VectorSpace Brand Palette - Light Mode */
+
   --brand-blue: #2563eb;
   --deep-blue: #1e40af;
+  --dark-royal-blue: #00006c;
   --navy-background: #1e293b;
   --gold-orange: #fbbf24;
   --amber-hover: #f59e0b;
@@ -174,11 +176,15 @@
 }
 
 /* VectorSpace Brand Color Utilities */
+
 .bg-brand-blue {
   background-color: var(--brand-blue);
 }
 .bg-deep-blue {
   background-color: var(--deep-blue);
+}
+.bg-dark-royal-blue {
+  background-color: var(--dark-royal-blue);
 }
 .bg-navy-background {
   background-color: var(--navy-background);
