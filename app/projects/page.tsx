@@ -36,6 +36,7 @@ export default function ProjectsPage() {
     ]
   }
 
+
   const jobProject = {
     title: "5 Bedroom Maisonette",
     description: "This completed project is located in Kahaini, Murang’a County, and involved structural design and full supervision. The development utilized EPS Building Technology for both walls and slabs, featuring a flat roof design that ensured structural efficiency and durability. The project was successfully delivered with a total value of KSh 18 million.",
@@ -47,6 +48,88 @@ export default function ProjectsPage() {
       "/job 5.jpeg",
       "/job 6.jpeg",
       "/job 7.jpeg",
+    ]
+  }
+
+
+  const ujenziProject = {
+    title: "3-Bedroom Bungalow",
+    description: "This completed project is a 3-bedroom bungalow located in Chakol, Busia County. It involved structural design and full supervision, utilizing EPS Building Technology for the load-bearing walls and a flat roof terrace. The project was successfully delivered with a total value of KSh 4 million",
+    images: [
+      "/projects/project 4/ujenzi 1.jpeg",
+      "/projects/project 4/ujenzi 2.jpeg",
+      "/projects/project 4/ujenzi 3.jpeg",
+      "/projects/project 4/ujenzi 4.jpeg",
+      "/projects/project 4/ujenzi 5.jpeg",
+      "/projects/project 4/ujenzi 6.jpeg",
+      "/projects/project 4/ujenzi 7.jpeg",
+      "/projects/project 4/ujenzi 8.jpeg",
+      "/projects/project 4/ujenzi 9.jpeg",
+      "/projects/project 4/ujenzi 10.jpeg",
+      "/projects/project 4/ujenzi 11.jpeg",
+      "/projects/project 4/ujenzi 12.jpeg",
+      "/projects/project 4/ujenzi 13.jpeg",
+      "/projects/project 4/ujenzi 14.jpeg",
+      "/projects/project 4/ujenzi 15.jpeg",
+    ]
+  }
+
+
+  const houseProject = {
+    title: "5-bedroom villa and two 3-bedroom",
+    description: "This project, located in Naivasha, Nakuru County, comprises a 5-bedroom villa and two 3-bedroom bungalows. The scope included structural design, supervision, and partial construction on a sub-contract basis. The bungalows were constructed using EPS Building Technology for the load-bearing walls, while the villa (maisonette) utilized infill wall panels and suspended slab panels, featuring a lounge with a 10m by 8m clear ceiling achieved with an EPS ribbed slab panel. The bungalows have been completed, and finishing works are ongoing for the maisonette, with a total project value of KSh 45 million.",
+    images: [
+      "/projects/project 5/house 1.jpeg",
+      "/projects/project 5/house 2.jpeg",
+      "/projects/project 5/house 3.jpeg",
+      "/projects/project 5/house 4.jpeg",
+      "/projects/project 5/house 5.jpeg",
+      "/projects/project 5/house 6.jpeg",
+      "/projects/project 5/house 7.jpeg",
+      "/projects/project 5/house 8.jpeg",
+      "/projects/project 5/house 9.jpeg",
+      "/projects/project 5/house 10.jpeg",
+      "/projects/project 5/house 11.jpeg",
+      "/projects/project 5/house 12.jpeg",
+    ]
+  }
+
+
+  const nyumbaProject = {
+    title: "structural retrofitting",
+    description: "This completed project involved the structural retrofitting of reinforced concrete columns in Gacharage, Kiambu County. The scope included the machine application of structural shotcrete to strengthen columns that were not originally designed to support additional floors. Following the consulting engineer's proposal, the columns at the basement and ground floor levels were retrofitted using jacketing techniques, with VectorSpace Ltd providing the shotcrete application solution. The project was successfully delivered at a value of KSh 1.0 million.",
+    images: [
+      "/projects/project 6/nyumba 1.jpeg",
+      "/projects/project 6/nyumba 2.jpeg",
+      "/projects/project 6/nyumba 3.jpeg",
+      "/projects/project 6/nyumba 4.jpeg",
+      "/projects/project 6/nyumba 5.jpeg",
+      "/projects/project 6/nyumba 6.jpeg",
+      "/projects/project 6/nyumba 7.jpeg",
+      "/projects/project 6/nyumba 8.jpeg",
+      "/projects/project 6/nyumba 9.jpeg",
+    ]
+  }
+
+  const project7Project = {
+    title: "4-bedroom maisonette",
+    description: "This completed project is a 4-bedroom maisonette located in Shimba Hills, Kwale County. The scope included structural design, training the main contractor on EPS Building Technology, and full site supervision. The development was executed using the full EPS system, incorporating load-bearing wall panels, EPS ribbed suspended slabs and flat roof terrace, as well as an EPS panel staircase. Notably, the maisonette features a double-volume lounge with walls spanning up to 7 meters in clear height. The project was delivered at a total value of KSh 20 million.",
+    images: [
+      "/projects/project 7/project 1.jpeg",
+      "/projects/project 7/project 2.jpeg",
+      "/projects/project 7/project 3.jpeg",
+      "/projects/project 7/project 4.jpeg",
+      "/projects/project 7/project 5.jpeg",
+      "/projects/project 7/project 6.jpeg",
+      "/projects/project 7/project 7.jpeg",
+      "/projects/project 7/project 8.jpeg",
+      "/projects/project 7/project 9.jpeg",
+      "/projects/project 7/project 10.jpeg",
+      "/projects/project 7/project 11.jpeg",
+      "/projects/project 7/project 12.jpeg",
+      "/projects/project 7/project 13.jpeg",
+      "/projects/project 7/project 14.jpeg",
+      "/projects/project 7/project 15.jpeg",
     ]
   }
 
@@ -143,10 +226,140 @@ export default function ProjectsPage() {
                     <p className="text-muted-foreground">{jobProject.description}</p>
                   </div>
 
+
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {jobProject.images.map((image, index) => (
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
                         <img src={image} alt={`Job project image ${index + 1}`} className="w-full h-48 object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
+                  <img src={ujenziProject.images[0]} alt="Ujenzi project image" className="w-full h-64 object-cover" />
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-bold text-foreground mb-2">{ujenziProject.title}</h3>
+                    <p className="text-muted-foreground">{ujenziProject.description}</p>
+                  </div>
+                  <div className="p-6 text-center">
+                    <p className="text-muted-foreground">Click to view project gallery</p>
+                  </div>
+                </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                <div className="space-y-6">
+                  <div className="text-center">
+                    <h2 className="text-2xl font-bold text-foreground mb-2">{ujenziProject.title}</h2>
+                    <p className="text-muted-foreground">{ujenziProject.description}</p>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {ujenziProject.images.map((image, index) => (
+
+                      <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
+                        <img src={image} alt={`Ujenzi project image ${index + 1}`} className="w-full h-48 object-cover" />
+                      </div>
+                    ))}
+
+                  </div>
+                </div>
+
+              </DialogContent>
+            </Dialog>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
+                  <img src={houseProject.images[0]} alt="House project image" className="w-full h-64 object-cover" />
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-bold text-foreground mb-2">{houseProject.title}</h3>
+                    <p className="text-muted-foreground">{houseProject.description}</p>
+                  </div>
+                  <div className="p-6 text-center">
+                    <p className="text-muted-foreground">Click to view project gallery</p>
+                  </div>
+                </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                <div className="space-y-6">
+                  <div className="text-center">
+                    <h2 className="text-2xl font-bold text-foreground mb-2">{houseProject.title}</h2>
+                    <p className="text-muted-foreground">{houseProject.description}</p>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {houseProject.images.map((image, index) => (
+                      <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
+                        <img src={image} alt={`House project image ${index + 1}`} className="w-full h-48 object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </DialogContent>
+            </Dialog>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
+                  <img src={nyumbaProject.images[0]} alt="Nyumba project image" className="w-full h-64 object-cover" />
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-bold text-foreground mb-2">{nyumbaProject.title}</h3>
+                    <p className="text-muted-foreground">{nyumbaProject.description}</p>
+                  </div>
+                  <div className="p-6 text-center">
+                    <p className="text-muted-foreground">Click to view project gallery</p>
+                  </div>
+                </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                <div className="space-y-6">
+                  <div className="text-center">
+                    <h2 className="text-2xl font-bold text-foreground mb-2">{nyumbaProject.title}</h2>
+                    <p className="text-muted-foreground">{nyumbaProject.description}</p>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {nyumbaProject.images.map((image, index) => (
+                      <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
+                        <img src={image} alt={`Nyumba project image ${index + 1}`} className="w-full h-48 object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </DialogContent>
+            </Dialog>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
+                  <img src={project7Project.images[0]} alt="Project 7 image" className="w-full h-64 object-cover" />
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-bold text-foreground mb-2">{project7Project.title}</h3>
+                    <p className="text-muted-foreground">{project7Project.description}</p>
+                  </div>
+                  <div className="p-6 text-center">
+                    <p className="text-muted-foreground">Click to view project gallery</p>
+                  </div>
+                </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                <div className="space-y-6">
+                  <div className="text-center">
+                    <h2 className="text-2xl font-bold text-foreground mb-2">{project7Project.title}</h2>
+                    <p className="text-muted-foreground">{project7Project.description}</p>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {project7Project.images.map((image, index) => (
+                      <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
+                        <img src={image} alt={`Project 7 image ${index + 1}`} className="w-full h-48 object-cover" />
                       </div>
                     ))}
                   </div>
