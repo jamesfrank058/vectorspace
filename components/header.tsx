@@ -1,9 +1,11 @@
 
+
 "use client"
 
 import { useState, useEffect, useRef } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import { Menu, X } from "lucide-react"
+import Socials from "./socials"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -75,6 +77,7 @@ export default function Header() {
             <span className="font-bold text-xl text-foreground">VECTORSPACE</span>
           </div>
 
+
           {/* Desktop Menu */}
           <nav className="hidden md:flex gap-8">
             <button onClick={() => handleNavigation("about")} className="text-foreground hover:text-accent transition">
@@ -93,6 +96,11 @@ export default function Header() {
               Contact
             </button>
           </nav>
+
+          {/* Desktop Socials */}
+          <div className="hidden md:flex items-center">
+            <Socials />
+          </div>
 
 
           {/* Mobile Menu Button */}
@@ -150,6 +158,7 @@ export default function Header() {
                   Projects
                 </span>
               </button>
+
               <button 
                 onClick={() => handleNavigation("contact")} 
                 className="px-6 py-4 text-left text-foreground hover:text-accent hover:bg-accent/10 transition-all duration-200 font-medium border-l-4 border-transparent hover:border-accent hover:pl-8 relative group"
@@ -160,6 +169,14 @@ export default function Header() {
                 </span>
               </button>
             </nav>
+            
+            {/* Mobile Socials */}
+            <div className="px-6 py-4 border-t border-border">
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-muted-foreground font-medium">Follow us:</span>
+                <Socials />
+              </div>
+            </div>
           </div>
         </div>
       </div>
