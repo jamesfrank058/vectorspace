@@ -5,7 +5,7 @@ export default function Footer() {
   return (
 
 
-    <footer className="bg-dark-royal-blue text-white py-12 border-t border-gray-600">
+    <footer className="text-white py-12 border-t border-gray-600" style={{ backgroundColor: "#191970" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>

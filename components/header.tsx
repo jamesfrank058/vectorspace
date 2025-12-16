@@ -66,7 +66,7 @@ export default function Header() {
 
   return (
 
-    <header className="sticky top-0 z-50 bg-dark-royal-blue border-b border-gray-600">
+    <header className="sticky top-0 z-50 border-b border-gray-600" style={{ backgroundColor: "#191970" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
@@ -121,7 +121,7 @@ export default function Header() {
             isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="border-t border-gray-600 bg-dark-royal-blue/95 backdrop-blur-sm shadow-lg">
+          <div className="border-t border-gray-600 backdrop-blur-sm shadow-lg" style={{ backgroundColor: "rgba(25, 25, 112, 0.95)" }}>
             <nav className="py-2 flex flex-col">
               <button 
                 onClick={() => handleNavigation("about")} 
