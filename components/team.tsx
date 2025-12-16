@@ -82,7 +82,7 @@ export default function Team() {
             <div
               key={member.name}
               className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-light-gray hover:border-brand-blue group"
-              style={{ backgroundColor: "#00006c" }}
+              style={{ backgroundColor: "#0B2A4A" }}
             >
               <img src={member.image || "/placeholder.svg"} alt={member.name} className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300" />
               <div className="p-6">

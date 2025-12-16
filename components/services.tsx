@@ -45,7 +45,7 @@ export default function Services() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((service) => (
-            <div key={service.title} className="border-l-4 border-gold-orange pl-6 py-4 rounded-r-lg shadow-sm hover:shadow-md transition-all duration-300 hover:border-brand-blue" style={{ backgroundColor: "#00006c" }}>
+            <div key={service.title} className="border-l-4 border-gold-orange pl-6 py-4 rounded-r-lg shadow-sm hover:shadow-md transition-all duration-300 hover:border-brand-blue" style={{ backgroundColor: "#0B2A4A" }}>
               <div className="flex items-center gap-3 mb-3">
                 <service.icon className="w-6 h-6 text-gold-orange" />
                 <h3 className="text-xl font-bold text-white">{service.title}</h3>

@@ -154,7 +154,7 @@ export default function Contact() {
           <form
             onSubmit={handleSubmit}
             className="space-y-6 p-8 rounded-lg border shadow-lg"
-            style={{ backgroundColor: "#00006c", borderColor: "transparent" }}
+            style={{ backgroundColor: "#0B2A4A", borderColor: "transparent" }}
           >
             <div>
               <label className="block text-white font-semibold mb-2">

@@ -32,7 +32,7 @@ export default function Projects() {
             <div
               key={project.title}
               className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-light-gray hover:border-brand-blue group"
-              style={{ backgroundColor: "#00006c" }}
+              style={{ backgroundColor: "#0B2A4A" }}
             >
               <img src={project.image || "/placeholder.svg"} alt={project.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
               <div className="p-6">
@@ -54,7 +54,7 @@ export default function Projects() {
         </div>
 
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center p-12 rounded-lg border shadow-lg" style={{ backgroundColor: "#00006c", borderColor: "transparent" }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center p-12 rounded-lg border shadow-lg" style={{ backgroundColor: "#0B2A4A", borderColor: "transparent" }}>
           <div>
             <p className="text-3xl font-bold text-gold-orange">60+</p>
             <p className="text-gray-200 mt-2">Projects Completed</p>
