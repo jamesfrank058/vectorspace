@@ -56,7 +56,7 @@ export default function Projects() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center p-12 rounded-lg border shadow-lg" style={{ backgroundColor: "#0B2A4A", borderColor: "transparent" }}>
           <div>
-            <p className="text-3xl font-bold text-gold-orange">60+</p>
+            <p className="text-3xl font-bold text-gold-orange">40+</p>
             <p className="text-gray-200 mt-2">Projects Completed</p>
           </div>
           <div>
@@ -68,7 +68,7 @@ export default function Projects() {
             <p className="text-gray-200 mt-2">Counties Served</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-gold-orange">30+</p>
+            <p className="text-3xl font-bold text-gold-orange">15+</p>
             <p className="text-gray-200 mt-2">Team Members</p>
           </div>
         </div>

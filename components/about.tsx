@@ -19,15 +19,15 @@ export default function About() {
             </p>
             <div className="grid grid-cols-3 gap-4 mt-8">
               <div>
-                <p className="text-3xl font-bold text-gold-orange">40+</p>
+                <p className="text-3xl font-bold" style={{ color: "#0B2A4A" }}>40+</p>
                 <p className="text-medium-gray">Projects</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-gold-orange">9+</p>
+                <p className="text-3xl font-bold" style={{ color: "#0B2A4A" }}>9+</p>
                 <p className="text-medium-gray">Years</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-gold-orange">10+</p>
+                <p className="text-3xl font-bold" style={{ color: "#0B2A4A" }}>10+</p>
                 <p className="text-medium-gray">Counties</p>
               </div>
             </div>
