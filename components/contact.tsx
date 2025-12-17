@@ -132,7 +132,7 @@ export default function Contact() {
               </div>
 
               <div className="mt-6">
-                <h4 className="font-bold text-dark-gray mb-4">Our Location</h4>
+                <h4 className="text-2xl font-bold text-dark-gray mb-4">Our Location</h4>
                 <div className="aspect-video w-full rounded-lg overflow-hidden border border-light-gray shadow-lg">
                   <iframe
                     src="https://maps.google.com/maps?q=CK+Business+Center+Ruiru&t=&z=15&ie=UTF8&iwloc=&output=embed"
