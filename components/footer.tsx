@@ -59,10 +59,14 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 text-center text-light-gray">
-          <div className="mb-4">
+          <div className="border-t border-dark-gray pt-4">
+            <p>&copy; 2025 VectorSpace Limited. All rights reserved.</p>
+          </div>
+
+          <div className="mt-4">
             <p className="font-semibold text-gold-orange">Designed &amp; Developed by James Franklin</p>
             <p className="mt-2 flex items-center justify-center gap-4">
-              <a href="jamesfranklinkimotho@gmail.com" className="flex items-center text-gold-orange hover:underline">
+              <a href="mailto:jamesfranklinkimotho@gmail.com" className="flex items-center text-gold-orange hover:underline">
                 <Mail size={16} className="mr-2 text-gold-orange" /> Email
               </a>
               <span className="mx-2 text-light-gray">•</span>
@@ -74,10 +78,6 @@ export default function Footer() {
                 <Github size={16} className="mr-2 text-gold-orange" /> GitHub
               </a>
             </p>
-          </div>
-
-          <div className="border-t border-dark-gray pt-4">
-            <p>&copy; 2025 VectorSpace Limited. All rights reserved.</p>
           </div>
         </div>
       </div>
