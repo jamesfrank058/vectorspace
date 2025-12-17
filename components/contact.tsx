@@ -2,11 +2,13 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 import { supabase } from "../lib/supabase"
+import { useSearchParams } from "next/navigation"
 
 export default function Contact() {
+  const searchParams = useSearchParams()
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -17,6 +19,18 @@ export default function Contact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+
+  // Pre-fill form based on URL parameters
+  useEffect(() => {
+    const type = searchParams.get("type")
+    if (type === "resource") {
+      setFormData((prev) => ({
+        ...prev,
+        service: "resource-suggestion",
+        details: "I would like to suggest a resource for your resources page:\n\n",
+      }))
+    }
+  }, [searchParams])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target
@@ -74,10 +88,16 @@ export default function Contact() {
 
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-4">Get In Touch</h2>
-        <p className="text-medium-gray text-lg mb-12">
-          Ready to start your project? Contact us today for a free consultation
-        </p>
+        <div className="mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-4">
+            {searchParams.get("type") === "resource" ? "Suggest a Resource" : "Get In Touch"}
+          </h2>
+          <p className="text-medium-gray text-lg mb-12">
+            {searchParams.get("type") === "resource"
+              ? "Found a valuable engineering resource? Share it with our community by filling out the form below."
+              : "Ready to start your project? Contact us today for a free consultation"}
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-12">
 
@@ -210,12 +230,14 @@ export default function Contact() {
                 <option value="structural-assessment">Structural Integrity Assessments & Retrofitting</option>
                 <option value="civil-engineering">Civil & Structural Engineering Services</option>
                 <option value="architectural-design">Architectural Planning & Design Services</option>
+                <option value="resource-suggestion">Resource Suggestion</option>
+                <option value="other">Other</option>
               </select>
             </div>
 
             <div>
               <label className="block text-white font-semibold mb-2">
-                Project Details <span className="text-red-500">*</span>
+                {searchParams.get("type") === "resource" ? "Resource Details" : "Project Details"} <span className="text-red-500">*</span>
               </label>
               <textarea
                 name="details"
@@ -223,6 +245,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows={4}
+                placeholder={searchParams.get("type") === "resource" ? "Resource name, URL, category, and why you recommend it..." : "Tell us about your project..."}
                 className="w-full px-4 py-2 border border-light-gray rounded-lg bg-white text-dark-gray focus:outline-none focus:border-brand-blue transition-colors duration-300"
               />
             </div>
