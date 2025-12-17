@@ -60,11 +60,11 @@ export default function Projects() {
             <p className="text-gray-200 mt-2">Projects Completed</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-black">9+</p>
+            <p className="text-3xl font-bold text-gold-orange">9+</p>
             <p className="text-gray-200 mt-2">Years of Experience</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-black">10+</p>
+            <p className="text-3xl font-bold text-gold-orange">10+</p>
             <p className="text-gray-200 mt-2">Counties Served</p>
           </div>
           <div>
