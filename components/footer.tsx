@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react"
 import Socials from "./socials"
 
 export default function Footer() {
@@ -10,15 +10,15 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2">
-            <img src="/icon-light-32x32.png" alt="VectorSpace Logo" className="w-8 h-8 rounded" />
-            <span className="font-bold text-xl text-foreground">VECTORSPACE</span>
+            <img src="/icon-light-32x32.png" alt="VectorSpace Logo" className="w-10 h-10 rounded" />
+            <span className="font-bold text-xl text-gold-orange">VECTOR<span className="text-white">SPACE</span></span>
           </div>
             <p className="text-light-gray">Engineering, Precision & Innovation</p>
             <Socials />
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-white">Quick Links</h4>
+            <h4 className="font-bold mb-4 text-gold-orange">Quick Links</h4>
             <div className="space-y-2 text-light-gray">
               <a href="#about" className="block hover:text-gold-orange transition-colors duration-300">
                 About
@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-white">Contact</h4>
+            <h4 className="font-bold mb-4 text-gold-orange">Contact</h4>
             <div className="space-y-3 text-light-gray">
               <div className="flex items-center gap-2">
                 <Phone size={18} className="text-gold-orange" />
@@ -58,8 +58,27 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-dark-gray pt-8 text-center text-light-gray">
-          <p>&copy; 2025 VectorSpace Limited. All rights reserved.</p>
+        <div className="pt-8 text-center text-light-gray">
+          <div className="mb-4">
+            <p className="font-semibold text-gold-orange">Designed &amp; Developed by James Franklin</p>
+            <p className="mt-2 flex items-center justify-center gap-4">
+              <a href="jamesfranklinkimotho@gmail.com" className="flex items-center text-gold-orange hover:underline">
+                <Mail size={16} className="mr-2 text-gold-orange" /> Email
+              </a>
+              <span className="mx-2 text-light-gray">•</span>
+              <a href="https://www.linkedin.com/in/franklin-james-52a63a312/" className="flex items-center text-gold-orange hover:underline">
+                <Linkedin size={16} className="mr-2 text-gold-orange" /> LinkedIn
+              </a>
+              <span className="mx-2 text-light-gray">•</span>
+              <a href="https://github.com/Jamesfrank058/" className="flex items-center text-gold-orange hover:underline">
+                <Github size={16} className="mr-2 text-gold-orange" /> GitHub
+              </a>
+            </p>
+          </div>
+
+          <div className="border-t border-dark-gray pt-4">
+            <p>&copy; 2025 VectorSpace Limited. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </footer>
