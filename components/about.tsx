@@ -42,14 +42,14 @@ export default function About() {
         </div>
 
 
-        <div className="bg-light-gray p-12 rounded-lg border border-light-gray shadow-lg">
+        <div className="p-12 rounded-lg border shadow-lg" style={{ backgroundColor: "#0B2A4A", borderColor: "transparent" }}>
           <div className="grid md:grid-cols-2 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <Eye className="w-8 h-8 text-gold-orange" />
-                <h3 className="text-2xl font-bold text-dark-gray">Our Vision</h3>
+                <h3 className="text-2xl font-bold text-white">Our Vision</h3>
               </div>
-              <p className="text-medium-gray leading-relaxed">
+              <p className="text-gray-200 leading-relaxed">
                 To be a leading force in innovative, sustainable, and cost-effective engineering solutions transforming
                 built environments across East Africa.
               </p>
@@ -57,43 +57,42 @@ export default function About() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <Target className="w-8 h-8 text-brand-blue" />
-                <h3 className="text-2xl font-bold text-dark-gray">Our Mission</h3>
+                <h3 className="text-2xl font-bold text-white">Our Mission</h3>
               </div>
-              <p className="text-medium-gray leading-relaxed">
+              <p className="text-gray-200 leading-relaxed">
                 Deliver high-quality, structurally sound infrastructure through cutting-edge design, project management
                 excellence, and alternative building technologies.
               </p>
             </div>
           </div>
-
-          <h3 className="text-2xl font-bold text-dark-gray mb-8">Why Choose VectorSpace?</h3>
+          <h3 className="text-2xl font-bold text-white mb-8">Why Choose VectorSpace?</h3>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="flex items-start gap-3">
               <Award className="w-6 h-6 text-gold-orange mt-1 shrink-0" />
               <div>
-                <h4 className="font-bold text-dark-gray mb-2">Technical Excellence</h4>
-                <p className="text-medium-gray">Registered with NCA and accredited by EBK & IEK</p>
+                <h4 className="font-bold text-white mb-2">Technical Excellence</h4>
+                <p className="text-gray-200">Registered with NCA and accredited by EBK & IEK</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Lightbulb className="w-6 h-6 text-brand-blue mt-1 shrink-0" />
               <div>
-                <h4 className="font-bold text-dark-gray mb-2">Innovation-Driven</h4>
-                <p className="text-medium-gray">Pioneering Alternative Building Materials & Technologies</p>
+                <h4 className="font-bold text-white mb-2">Innovation-Driven</h4>
+                <p className="text-gray-200">Pioneering Alternative Building Materials & Technologies</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Trophy className="w-6 h-6 text-deep-blue mt-1 shrink-0" />
               <div>
-                <h4 className="font-bold text-dark-gray mb-2">Proven Track Record</h4>
-                <p className="text-medium-gray">60+ projects completed across 10+ counties</p>
+                <h4 className="font-bold text-white mb-2">Proven Track Record</h4>
+                <p className="text-gray-200">60+ projects completed across 10+ counties</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Users className="w-6 h-6 text-gold-orange mt-1 shrink-0" />
               <div>
-                <h4 className="font-bold text-dark-gray mb-2">Client-Centric</h4>
-                <p className="text-medium-gray">Transparent communication and tailored solutions</p>
+                <h4 className="font-bold text-white mb-2">Client-Centric</h4>
+                <p className="text-gray-200">Transparent communication and tailored solutions</p>
               </div>
             </div>
           </div>
