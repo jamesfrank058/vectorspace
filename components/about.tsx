@@ -23,11 +23,11 @@ export default function About() {
                 <p className="text-medium-gray">Projects</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-brand-blue">9+</p>
+                <p className="text-3xl font-bold text-gold-orange">9+</p>
                 <p className="text-medium-gray">Years</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-deep-blue">10+</p>
+                <p className="text-3xl font-bold text-gold-orange">10+</p>
                 <p className="text-medium-gray">Counties</p>
               </div>
             </div>
