@@ -47,7 +47,7 @@ export default function Services() {
           {services.map((service) => (
             <div key={service.title} className="border-l-4 border-gold-orange pl-6 py-4 rounded-r-lg shadow-sm hover:shadow-md transition-all duration-300 hover:border-brand-blue" style={{ backgroundColor: "#0B2A4A" }}>
               <div className="flex items-center gap-3 mb-3">
-                <service.icon className="w-6 h-6 text-gold-orange" />
+                <service.icon className="w-10 h-10 text-gold-orange" />
                 <h3 className="text-xl font-bold text-white">{service.title}</h3>
               </div>
               <p className="text-gray-200">{service.description}</p>
