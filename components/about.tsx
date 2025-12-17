@@ -56,7 +56,7 @@ export default function About() {
             </div>
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <Target className="w-8 h-8 text-brand-blue" />
+                <Target className="w-8 h-8 text-gold-orange" />
                 <h3 className="text-2xl font-bold text-white">Our Mission</h3>
               </div>
               <p className="text-gray-200 leading-relaxed">
@@ -75,14 +75,14 @@ export default function About() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Lightbulb className="w-6 h-6 text-brand-blue mt-1 shrink-0" />
+              <Lightbulb className="w-6 h-6 text-gold-orange mt-1 shrink-0" />
               <div>
                 <h4 className="font-bold text-white mb-2">Innovation-Driven</h4>
                 <p className="text-gray-200">Pioneering Alternative Building Materials & Technologies</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Trophy className="w-6 h-6 text-deep-blue mt-1 shrink-0" />
+              <Trophy className="w-6 h-6 text-gold-orange mt-1 shrink-0" />
               <div>
                 <h4 className="font-bold text-white mb-2">Proven Track Record</h4>
                 <p className="text-gray-200">60+ projects completed across 10+ counties</p>
