@@ -71,8 +71,8 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
 
 
-          <button onClick={handleLogoClick} className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer">
-            <img src="/icon-light-32x32.png" alt="VectorSpace Logo" className="w-10 h-10 rounded" />
+          <button onClick={handleLogoClick} className="flex items-center gap-1 hover:opacity-80 transition-opacity cursor-pointer">
+            <img src="/icon-light-32x32.png" alt="VectorSpace Logo" className="w-12 h-12 rounded" />
             <span className="font-bold text-xl">
               <span className="text-white">VECTOR</span>
               <span className="text-gold-orange">SPACE</span>

@@ -89,7 +89,7 @@ export default function Contact() {
               <div className="flex gap-4">
                 <Phone className="text-gold-orange shrink-0 mt-1" size={24} />
                 <div>
-                  <h4 className="font-bold text-dark-gray">Call Us</h4>
+                  <h4 className="text-2xl md:text-lg font-bold text-dark-gray">Call Us</h4>
                   <a href="tel:+254746333285" className="text-brand-blue hover:text-deep-blue transition-colors duration-300 hover:underline">
                     +254 746 333 285
                   </a>
@@ -99,7 +99,7 @@ export default function Contact() {
               <div className="flex gap-4">
                 <Mail className="text-gold-orange shrink-0 mt-1" size={24} />
                 <div>
-                  <h4 className="font-bold text-dark-gray">Email Us</h4>
+                  <h4 className="text-2xl md:text-lg font-bold text-dark-gray">Email Us</h4>
                   <a href="mailto:info@vectorspace.co.ke" className="text-brand-blue hover:text-deep-blue transition-colors duration-300 hover:underline">
                     info@vectorspace.co.ke
                   </a>
@@ -109,7 +109,7 @@ export default function Contact() {
               <div className="flex gap-4">
                 <MapPin className="text-gold-orange shrink-0 mt-1" size={24} />
                 <div>
-                  <h4 className="font-bold text-dark-gray">Our Office</h4>
+                  <h4 className="text-2xl md:text-lg font-bold text-dark-gray">Our Office</h4>
                   <a
                     href="https://maps.google.com/?q=CK+Business+Center+Ruiru"
                     target="_blank"
@@ -124,7 +124,7 @@ export default function Contact() {
               <div className="flex gap-4">
                 <Clock className="text-gold-orange shrink-0 mt-1" size={24} />
                 <div>
-                  <h4 className="font-bold text-dark-gray">Working Hours</h4>
+                  <h4 className="text-2xl md:text-lg font-bold text-dark-gray">Working Hours</h4>
                   <p className="text-medium-gray">Monday - Friday: 8:00 AM - 5:00 PM</p>
                   <p className="text-medium-gray">Saturday: 9:00 AM - 1:00 PM</p>
                   <p className="text-medium-gray">Holidays: Closed</p>
@@ -132,7 +132,7 @@ export default function Contact() {
               </div>
 
               <div className="mt-6">
-                <h4 className="font-bold text-dark-gray mb-4">Our Location</h4>
+                <h4 className="text-2xl md:text-lg font-bold text-dark-gray mb-4">Our Location</h4>
                 <div className="aspect-video w-full rounded-lg overflow-hidden border border-light-gray shadow-lg">
                   <iframe
                     src="https://maps.google.com/maps?q=CK+Business+Center+Ruiru&t=&z=15&ie=UTF8&iwloc=&output=embed"

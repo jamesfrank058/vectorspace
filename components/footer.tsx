@@ -9,8 +9,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2">
-            <img src="/icon-light-32x32.png" alt="VectorSpace Logo" className="w-10 h-10 rounded" />
+            <div className="flex items-center gap-1">
+            <img src="/icon-light-32x32.png" alt="VectorSpace Logo" className="w-12 h-12 rounded" />
             <span className="font-bold text-xl text-gold-orange">VECTOR<span className="text-white">SPACE</span></span>
           </div>
             <p className="text-light-gray">Engineering, Precision & Innovation</p>
@@ -59,25 +59,25 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 text-center text-light-gray">
-          <div className="border-t border-dark-gray pt-4">
-            <p>&copy; 2025 VectorSpace Limited. All rights reserved.</p>
-          </div>
-
-          <div className="mt-4">
-            <p className="font-semibold text-gold-orange">Designed &amp; Developed by James Franklin</p>
-            <p className="mt-2 flex items-center justify-center gap-4">
+          <div className="mb-4">
+            <p className="font-semibold text-gold-orange text-sm">Designed &amp; Developed by James Franklin</p>
+            <p className="mt-2 flex items-center justify-center gap-4 text-sm">
               <a href="mailto:jamesfranklinkimotho@gmail.com" className="flex items-center text-gold-orange hover:underline">
-                <Mail size={16} className="mr-2 text-gold-orange" /> Email
+                <Mail size={14} className="mr-2 text-gold-orange" /> Email
               </a>
               <span className="mx-2 text-light-gray">•</span>
               <a href="https://www.linkedin.com/in/franklin-james-52a63a312/" className="flex items-center text-gold-orange hover:underline">
-                <Linkedin size={16} className="mr-2 text-gold-orange" /> LinkedIn
+                <Linkedin size={14} className="mr-2 text-gold-orange" /> LinkedIn
               </a>
               <span className="mx-2 text-light-gray">•</span>
               <a href="https://github.com/Jamesfrank058/" className="flex items-center text-gold-orange hover:underline">
-                <Github size={16} className="mr-2 text-gold-orange" /> GitHub
+                <Github size={14} className="mr-2 text-gold-orange" /> GitHub
               </a>
             </p>
+          </div>
+
+          <div className="border-t border-dark-gray pt-4">
+            <p className="font-bold text-lg">&copy; 2025 VectorSpace Limited. All rights reserved.</p>
           </div>
         </div>
       </div>
