@@ -13,7 +13,7 @@ export default function Hero() {
     >
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black/40"></div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transform -translate-y-8 md:-translate-y-12">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance drop-shadow-lg">
             Engineering, Precision & Innovation
@@ -24,7 +24,7 @@ export default function Hero() {
 
           <a
             href="#projects"
-            className="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-deep-blue transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            className="inline-block bg-gold-orange text-dark-gray px-8 py-3 rounded-lg font-semibold hover:bg-amber-hover transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             View Projects
           </a>

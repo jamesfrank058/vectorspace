@@ -49,7 +49,7 @@ export default function Projects() {
             href="/projects"
             className="inline-block bg-gold-orange text-dark-gray px-8 py-3 rounded-lg font-semibold hover:bg-amber-hover transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
           >
-            More
+            More projects & Gallery
           </a>
         </div>
 
