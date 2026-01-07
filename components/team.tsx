@@ -14,6 +14,7 @@ export default function Team() {
         Contribution: "Driving organizational growth and successful project delivery",
       },
       image: "/ceo-milton-mulwa-professional-headshot.jpg",
+      imagePosition: "center 20%",
     },
     {
       name: "Brian Kinyanjui",
@@ -27,6 +28,7 @@ export default function Team() {
         contribution: "Delivering safe, efficient, and code-compliant structural solutions",
       },
       image: "/structural-engineer-brian-kinyanjui.jpg",
+      imagePosition: "center 24%",
     },
     {
       name: "Diana Adhiambo",
@@ -84,7 +86,12 @@ export default function Team() {
               className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-light-gray hover:border-brand-blue group"
               style={{ backgroundColor: "#0B2A4A" }}
             >
-              <img src={member.image || "/placeholder.svg"} alt={member.name} className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300" />
+              <img
+                src={member.image || "/placeholder.svg"}
+                alt={member.name}
+                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300"
+                style={{ objectPosition: member.imagePosition || 'center' }}
+              />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-1 group-hover:text-gold-orange transition-colors duration-300">{member.name}</h3>
                 <p className="text-gold-orange font-semibold mb-1">{member.role}</p>
