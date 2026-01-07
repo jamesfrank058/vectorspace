@@ -28,7 +28,7 @@ export default function Team() {
         contribution: "Delivering safe, efficient, and code-compliant structural solutions",
       },
       image: "/structural-engineer-brian-kinyanjui.jpg",
-      imagePosition: "center 40%",
+      imagePosition: "center 65%",
     },
     {
       name: "Diana Adhiambo",
