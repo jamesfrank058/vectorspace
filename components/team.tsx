@@ -68,7 +68,7 @@ export default function Team() {
         education: "Bachelor of Science in Accounting",
         experience: "6+ years in financial management",
         specialization: "Financial reporting and analysis",
-        achievement: "Expert in construction accounting",
+        achievement: "Enhanced financial transparency and compliat tareporting",
       },
       image: "/accountant-judy-maina-professional.jpg",
     },
