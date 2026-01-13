@@ -1,110 +1,314 @@
 "use client"
 
-import type React from "react"
-
 import { useState, useEffect } from "react"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
-import { supabase } from "../lib/supabase"
+import { MapPin, Phone, Mail, Clock, MessageCircle, ArrowRight, CircleDot } from "lucide-react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
-export default function Contact() {
-  const [isResourceType, setIsResourceType] = useState(false)
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    service: "",
-    details: "",
-    agreed: false,
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+// Kenyan public holidays for 2024-2025
+const kenyanHolidays = [
+  { month: 1, day: 1, name: "New Year's Day" },
+  { month: 3, day: 21, name: "Good Friday" },
+  { month: 3, day: 24, name: "Easter Monday" },
+  { month: 4, day: 18, name: "Idd-ul-Fitr" },
+  { month: 5, day: 1, name: "Labour Day" },
+  { month: 5, day: 25, name: "Africa Day" },
+  { month: 6, day: 1, dayName: "Saturday", name: "Madaraka Day" },
+  { month: 7, day: 20, name: "Eid al-Adha" },
+  { month: 10, day: 20, name: "Mashujaa Day" },
+  { month: 12, day: 12, name: "Independence Day" },
+  { month: 12, day: 25, name: "Christmas Day" },
+  { month: 12, day: 26, name: "Boxing Day" },
+]
 
-  // Pre-fill form based on URL parameters (client-only)
-  useEffect(() => {
-    try {
-      const params = new URLSearchParams(window.location.search)
-      const type = params.get("type")
-      if (type === "resource") {
-        setIsResourceType(true)
-        setFormData((prev) => ({
-          ...prev,
-          service: "resource-suggestion",
-          details: "I would like to suggest a resource for your resources page:\n\n",
-        }))
-      }
-    } catch (e) {
-      // ignore in non-browser environments
+// Office hours configuration
+const officeHours = {
+  weekday: { open: 8, close: 17 }, // 8 AM - 5 PM
+  saturday: { open: 8, close: 17 }, // 8 AM - 5 PM (same as weekdays)
+}
+
+// Get current time in Kenyan timezone (EAT, UTC+3)
+function getKenyanTime(): Date {
+  const now = new Date()
+  const kenyaOffset = 3 * 60 // UTC+3 in minutes
+  const localOffset = now.getTimezoneOffset()
+  const kenyaTime = new Date(now.getTime() + (kenyaOffset + localOffset) * 60 * 1000)
+  return kenyaTime
+}
+
+// Check if current day is a Kenyan public holiday
+function isHoliday(date: Date): { isHoliday: boolean; name?: string } {
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+
+  const holiday = kenyanHolidays.find(h => 
+    h.month === month && h.day === day
+  )
+
+  if (holiday) {
+    return { isHoliday: true, name: holiday.name }
+  }
+  return { isHoliday: false }
+}
+
+// Check if office is currently open
+function isOfficeOpen(): { isOpen: boolean; status: string; nextOpen?: string; holidayName?: string } {
+  const now = getKenyanTime()
+  const dayOfWeek = now.getDay() // 0 = Sunday, 1 = Monday, etc.
+  const hours = now.getHours()
+  const minutes = now.getMinutes()
+  const currentTime = hours + minutes / 60
+
+  const holidayCheck = isHoliday(now)
+  if (holidayCheck.isHoliday) {
+    // Calculate when to reopen after holiday
+    const nextDay = new Date(now)
+    nextDay.setDate(nextDay.getDate() + 1)
+    const nextDayOfWeek = nextDay.getDay()
+    
+    let reopenTime: string
+    if (nextDayOfWeek === 0) {
+      reopenTime = "Monday 8:00 AM"
+    } else {
+      reopenTime = "Tomorrow 8:00 AM"
     }
+    
+    return { 
+      isOpen: false, 
+      status: "Closed",
+      nextOpen: reopenTime,
+      holidayName: holidayCheck.name
+    }
+  }
+
+  // Sunday - closed, reopens tomorrow (Monday)
+  if (dayOfWeek === 0) {
+    return { 
+      isOpen: false, 
+      status: "Closed",
+      nextOpen: "Tomorrow 8:00 AM"
+    }
+  }
+
+  // Monday-Friday
+  if (dayOfWeek >= 1 && dayOfWeek <= 5) {
+    const { open, close } = officeHours.weekday
+    if (currentTime >= open && currentTime < close) {
+      return { 
+        isOpen: true, 
+        status: "Open Now",
+      }
+    } else if (currentTime < open) {
+      return { 
+        isOpen: false, 
+        status: "Closed",
+        nextOpen: `Today ${open}:00 AM`
+      }
+    } else {
+      // After closing time, reopens tomorrow
+      const nextDay = new Date(now)
+      nextDay.setDate(nextDay.getDate() + 1)
+      const nextDayOfWeek = nextDay.getDay()
+      
+      let reopenTime: string
+      if (nextDayOfWeek === 0) {
+        reopenTime = "Monday 8:00 AM"
+      } else {
+        reopenTime = "Tomorrow 8:00 AM"
+      }
+      
+      return { 
+        isOpen: false, 
+        status: "Closed",
+        nextOpen: reopenTime
+      }
+    }
+  }
+
+  // Saturday
+  if (dayOfWeek === 6) {
+    const { open, close } = officeHours.saturday
+    if (currentTime >= open && currentTime < close) {
+      return { 
+        isOpen: true, 
+        status: "Open Now",
+      }
+    } else if (currentTime < open) {
+      return { 
+        isOpen: false, 
+        status: "Closed",
+        nextOpen: `Today ${open}:00 AM`
+      }
+    } else {
+      // After closing on Saturday, reopens Monday
+      return { 
+        isOpen: false, 
+        status: "Closed",
+        nextOpen: "Monday 8:00 AM"
+      }
+    }
+  }
+
+  return { isOpen: false, status: "Closed" }
+}
+
+function OfficeStatus() {
+  const [status, setStatus] = useState<{ isOpen: boolean; status: string; nextOpen?: string; holidayName?: string } | null>(null)
+  const [currentTime, setCurrentTime] = useState<string>("")
+
+  useEffect(() => {
+    // Update status every minute
+    const updateStatus = () => {
+      const kenyanTime = getKenyanTime()
+      setStatus(isOfficeOpen())
+      setCurrentTime(kenyanTime.toLocaleTimeString('en-US', { 
+        hour: '2-digit', 
+        minute: '2-digit',
+        hour12: true,
+        timeZone: 'Africa/Nairobi'
+      }))
+    }
+
+    updateStatus()
+    const interval = setInterval(updateStatus, 60000) // Update every minute
+
+    return () => clearInterval(interval)
   }, [])
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
-    }))
-  }
+  if (!status) return null
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus("idle")
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="flex items-center gap-2">
+        <CircleDot 
+          size={16} 
+          className={status.isOpen ? "text-green-500 animate-pulse" : "text-red-500"} 
+        />
+        <span className={`font-bold ${status.isOpen ? "text-green-600" : "text-red-600"}`}>
+          {status.status}
+        </span>
+        <span className="text-sm text-medium-gray">
+          (Kenya Time: {currentTime})
+        </span>
+      </div>
+      {status.holidayName && (
+        <p className="text-sm text-amber-600 font-medium">
+          Holiday: {status.holidayName}
+        </p>
+      )}
+      {!status.isOpen && status.nextOpen && (
+        <p className="text-sm text-medium-gray">
+          Reopens: {status.nextOpen}
+        </p>
+      )}
+    </div>
+  )
+}
 
-    try {
-      // Only submit if we have a real Supabase client (not the build-time mock)
-      if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY) {
-        const { error } = await (supabase as any)
-          .from('contact_submissions')
-          .insert([
-            {
-              full_name: formData.fullName,
-              email: formData.email,
-              phone: formData.phone,
-              service: formData.service,
-              details: formData.details,
-              agreed: formData.agreed,
-              created_at: new Date().toISOString(),
-            }
-          ])
+function WorkingHours() {
+  const [currentTime, setCurrentTime] = useState<string>("")
 
-        if (error) throw error
-      }
-
-      setSubmitStatus("success")
-      // Reset form
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        service: "",
-        details: "",
-        agreed: false,
-      })
-    } catch (error: any) {
-      console.error("Error submitting form:", error)
-      console.error("Error details:", error?.message, error?.details, error?.hint)
-      setSubmitStatus("error")
-    } finally {
-      setIsSubmitting(false)
+  useEffect(() => {
+    const updateTime = () => {
+      const kenyanTime = getKenyanTime()
+      setCurrentTime(kenyanTime.toLocaleTimeString('en-US', { 
+        hour: '2-digit', 
+        minute: '2-digit',
+        hour12: true,
+        timeZone: 'Africa/Nairobi'
+      }))
     }
-  }
 
+    updateTime()
+    const interval = setInterval(updateTime, 60000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <div className="flex gap-4">
+      <Clock className="text-gold-orange shrink-0 mt-1" size={24} />
+      <div>
+        <h4 className="font-bold text-dark-gray">Working Hours</h4>
+        <p className="text-medium-gray">Monday - Saturday: 8:00 AM - 5:00 PM</p>
+        <p className="text-medium-gray">Holidays: Closed</p>
+        <div className="mt-3 p-3 bg-light-gray rounded-lg">
+          <OfficeStatus />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const faqItems = [
+  {
+    question: "What services does VectorSpace offer?",
+    answer: "VectorSpace provides comprehensive engineering and construction services including Advanced Building Systems, General Construction & Renovation, Costings (BQs), Structural Integrity Assessments, Civil & Structural Engineering, and Architectural Planning & Design."
+  },
+  {
+    question: "How can I request a quote for my project?",
+    answer: "You can request a quote by emailing us at info@vectorspace.co.ke or chatting with us directly on WhatsApp. Include details about your project type, estimated timeline, and any specific requirements for a personalized quote."
+  },
+  {
+    question: "Do you serve clients outside Kenya?",
+    answer: "Yes! While based in Ruiru, Kenya, we serve clients across East Africa and beyond. Contact us to discuss your project location and requirements, and we'll find the best way to support your needs."
+  },
+  {
+    question: "What is your typical project timeline?",
+    answer: "Project timelines vary based on scope and complexity. Small projects may take 2-4 weeks, while larger developments can span several months. We provide detailed timelines during the initial consultation phase."
+  },
+  {
+    question: "Do you provide structural integrity assessments?",
+    answer: "Absolutely. We offer thorough Structural Integrity Assessments and Retrofitting services for existing buildings. Our team evaluates structural health and provides recommendations for repairs or reinforcements."
+  },
+  {
+    question: "How can I collaborate with VectorSpace?",
+    answer: "We welcome collaborations with architects, contractors, developers, and property owners. Reach out via email or WhatsApp to discuss partnership opportunities and how we can work together on your next project."
+  },
+  {
+    question: "What areas do you cover in Kenya?",
+    answer: "While our office is in Ruiru, we provide services throughout Kenya including Nairobi, Mombasa, Kisumu, Nakuru, and surrounding regions. Contact us to confirm service availability in your specific location."
+  },
+  {
+    question: "Do you offer free consultations?",
+    answer: "Yes, we offer initial consultations to understand your project requirements. Contact us to schedule a meeting and discuss how we can bring your vision to life."
+  }
+]
+
+export default function Contact() {
   return (
 
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-4">
           <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-4">
-            {isResourceType ? "Suggest a Resource" : "Get In Touch"}
+            Frequently Asked Questions
           </h2>
           <p className="text-medium-gray text-lg mb-12">
-            {isResourceType
-              ? "Found a valuable engineering resource? Share it with our community by filling out the form below."
-              : "Ready to start your project? Contact us today for a free consultation"}
+            Find answers to common questions about our services, process, and how we can help with your project
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12">
+
+          {/* FAQ Accordion */}
+          <div>
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {faqItems.map((item, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="border border-light-gray rounded-lg px-4 bg-white shadow-sm hover:shadow-md transition-shadow duration-300"
+                >
+                  <AccordionTrigger className="text-left text-dark-gray hover:text-brand-blue transition-colors duration-300 py-4">
+                    <span className="font-semibold text-lg pr-4">{item.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-medium-gray leading-relaxed pb-4">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
 
           {/* Contact Information */}
           <div>
@@ -146,15 +350,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
-                <Clock className="text-gold-orange shrink-0 mt-1" size={24} />
-                <div>
-                  <h4 className="font-bold text-dark-gray">Working Hours</h4>
-                  <p className="text-medium-gray">Monday - Friday: 8:00 AM - 5:00 PM</p>
-                  <p className="text-medium-gray">Saturday: 9:00 AM - 1:00 PM</p>
-                  <p className="text-medium-gray">Holidays: Closed</p>
-                </div>
-              </div>
+              <WorkingHours />
 
               <div className="mt-6">
                 <h4 className="text-2xl font-bold text-dark-gray mb-4">Our Location</h4>
@@ -173,129 +369,43 @@ export default function Contact() {
               </div>
             </div>
           </div>
+        </div>
 
-
-          {/* Contact Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-6 p-8 rounded-lg border shadow-lg"
-            style={{ backgroundColor: "#0B2A4A", borderColor: "transparent" }}
-          >
-            <div>
-              <label className="block text-white font-semibold mb-2">
-                Full Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="fullName"
-                value={formData.fullName}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-light-gray rounded-lg bg-white text-dark-gray focus:outline-none focus:border-brand-blue transition-colors duration-300"
-              />
-            </div>
-
-            <div>
-              <label className="block text-white font-semibold mb-2">
-                Email <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-light-gray rounded-lg bg-white text-dark-gray focus:outline-none focus:border-brand-blue transition-colors duration-300"
-              />
-            </div>
-
-            <div>
-              <label className="block text-white font-semibold mb-2">Phone</label>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-light-gray rounded-lg bg-white text-dark-gray focus:outline-none focus:border-brand-blue transition-colors duration-300"
-              />
-            </div>
-
-            <div>
-              <label className="block text-white font-semibold mb-2">Service Interest</label>
-              <select
-                name="service"
-                value={formData.service}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-light-gray rounded-lg bg-white text-dark-gray focus:outline-none focus:border-brand-blue transition-colors duration-300"
-              >
-                <option value="">Select a service</option>
-                <option value="advanced-building">Advanced Building Systems & Specialized Construction</option>
-                <option value="general-construction">General Construction & Renovation Works</option>
-                <option value="costings">Costings (BQs) & System-Based Cost Comparisons</option>
-                <option value="structural-assessment">Structural Integrity Assessments & Retrofitting</option>
-                <option value="civil-engineering">Civil & Structural Engineering Services</option>
-                <option value="architectural-design">Architectural Planning & Design Services</option>
-                <option value="resource-suggestion">Resource Suggestion</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="block text-white font-semibold mb-2">
-                {isResourceType ? "Resource Details" : "Project Details"} <span className="text-red-500">*</span>
-              </label>
-              <textarea
-                name="details"
-                value={formData.details}
-                onChange={handleChange}
-                required
-                rows={4}
-                placeholder={isResourceType ? "Resource name, URL, category, and why you recommend it..." : "Tell us about your project..."}
-                className="w-full px-4 py-2 border border-light-gray rounded-lg bg-white text-dark-gray focus:outline-none focus:border-brand-blue transition-colors duration-300"
-              />
-            </div>
-
-            <div className="flex items-start gap-3">
-              <input
-                type="checkbox"
-                name="agreed"
-                id="agreed"
-                checked={formData.agreed}
-                onChange={handleChange}
-                required
-                className="mt-1 text-brand-blue"
-              />
-              <label htmlFor="agreed" className="text-sm text-gray-200">
-                I agree to the processing of my personal data as described in the{" "}
-                <a href="/privacy" className="text-brand-blue hover:text-deep-blue transition-colors duration-300 hover:underline">
-                  Privacy Policy
+        {/* Call-to-Action */}
+        <div className="mt-16">
+          <div className="rounded-2xl p-8 md:p-12 shadow-lg" style={{ backgroundColor: "#0B2A4A" }}>
+            <div className="text-center">
+              <MessageCircle className="mx-auto text-gold-orange mb-4" size={48} />
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Didn&apos;t find your answer?
+              </h3>
+              <p className="text-gray-300 text-lg mb-8">
+                Contact us via Email or Chat with us on WhatsApp
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="mailto:info@vectorspace.co.ke"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-brand-blue font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-md"
+                >
+                  <Mail size={20} />
+                  Email Us
+                  <ArrowRight size={16} />
                 </a>
-              </label>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=254746333285&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gold-orange text-white font-semibold rounded-lg hover:bg-gold-orange/90 transition-colors duration-300 shadow-md"
+                >
+                  <MessageCircle size={20} />
+                  Chat on WhatsApp
+                </a>
+              </div>
             </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-gold-orange text-white py-3 rounded-lg font-semibold hover:bg-gold-orange/90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
-            >
-              {isSubmitting ? "Submitting..." : "Submit Inquiry"}
-            </button>
-
-
-            {submitStatus === "success" && (
-              <div className="text-green-600 text-center mt-4 bg-green-50 p-3 rounded-lg border border-green-200">
-                Thank you for your inquiry! We will be in touch soon.
-              </div>
-            )}
-
-            {submitStatus === "error" && (
-              <div className="text-red-600 text-center mt-4 bg-red-50 p-3 rounded-lg border border-red-200">
-                There was an error submitting your form. Please try again.
-              </div>
-            )}
-          </form>
+          </div>
         </div>
       </div>
     </section>
   )
 }
+
