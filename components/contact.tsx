@@ -241,36 +241,40 @@ function WorkingHours() {
 
 const faqItems = [
   {
-    question: "What services does VectorSpace offer?",
-    answer: "VectorSpace provides comprehensive engineering and construction services including Advanced Building Systems, General Construction & Renovation, Costings (BQs), Structural Integrity Assessments, Civil & Structural Engineering, and Architectural Planning & Design."
+    question: "What services does VectorSpace Ltd offer?",
+    answer: "VectorSpace Ltd provides comprehensive engineering and construction services, including: Advanced Building Systems (EPS & hybrid construction), General construction and renovation works, Cost planning and Bills of Quantities (BQs), Structural integrity assessments and retrofitting, Civil and structural engineering consultancy, Architectural planning and design services."
   },
   {
     question: "How can I request a quote for my project?",
-    answer: "You can request a quote by emailing us at info@vectorspace.co.ke or chatting with us directly on WhatsApp. Include details about your project type, estimated timeline, and any specific requirements for a personalized quote."
+    answer: "You can request a quote by emailing us at projects@vectorspace.co.ke or chatting with us directly on WhatsApp. To help us respond accurately, please share: The service required, Project location, Proposed timelines, Architectural and/or structural drawings (if available)."
   },
   {
     question: "Do you serve clients outside Kenya?",
-    answer: "Yes! While based in Ruiru, Kenya, we serve clients across East Africa and beyond. Contact us to discuss your project location and requirements, and we'll find the best way to support your needs."
+    answer: "Yes. While we are based in Nairobi, Kenya, we serve clients across East Africa and, in some cases, beyond—depending on the nature and scope of the service."
   },
   {
     question: "What is your typical project timeline?",
-    answer: "Project timelines vary based on scope and complexity. Small projects may take 2-4 weeks, while larger developments can span several months. We provide detailed timelines during the initial consultation phase."
+    answer: "Project timelines vary depending on scope and complexity: Construction works - 4-bedroom bungalow: approximately 2–3 months, 5-bedroom maisonette: approximately 4–5 months. Design services - Timelines typically range from 2 weeks to 2 months, depending on project size, approvals, and design complexity."
   },
   {
     question: "Do you provide structural integrity assessments?",
-    answer: "Absolutely. We offer thorough Structural Integrity Assessments and Retrofitting services for existing buildings. Our team evaluates structural health and provides recommendations for repairs or reinforcements."
+    answer: "Yes. We carry out detailed Structural Integrity Assessments for existing buildings. Our services include visual inspections, structural evaluations, and recommendations for repairs, strengthening, or retrofitting where necessary. Testing methods are selected based on the building type and condition."
   },
   {
-    question: "How can I collaborate with VectorSpace?",
-    answer: "We welcome collaborations with architects, contractors, developers, and property owners. Reach out via email or WhatsApp to discuss partnership opportunities and how we can work together on your next project."
+    question: "Is VectorSpace Ltd licensed to operate in Kenya?",
+    answer: "Yes. VectorSpace Ltd is licensed by the National Construction Authority (NCA) to operate and undertake construction works in Kenya, in compliance with all applicable statutory and regulatory requirements."
   },
   {
-    question: "What areas do you cover in Kenya?",
-    answer: "While our office is in Ruiru, we provide services throughout Kenya including Nairobi, Mombasa, Kisumu, Nakuru, and surrounding regions. Contact us to confirm service availability in your specific location."
+    question: "How can I collaborate with VectorSpace Ltd?",
+    answer: "We welcome collaborations with architects, contractors, developers, and property owners. To discuss partnerships or joint projects, contact us via email at info@vectorspace.co.ke."
   },
   {
     question: "Do you offer free consultations?",
-    answer: "Yes, we offer initial consultations to understand your project requirements. Contact us to schedule a meeting and discuss how we can bring your vision to life."
+    answer: "Yes. We offer an initial consultation to understand your project needs and advise on the best approach. Get in touch to schedule a meeting and explore how we can support your project."
+  },
+  {
+    question: "Do you handle approvals and regulatory requirements?",
+    answer: "We support clients through the design coordination and documentation process and can guide on statutory requirements. Approval submissions may be handled directly by the client or by arrangement, depending on the project scope."
   }
 ]
 
