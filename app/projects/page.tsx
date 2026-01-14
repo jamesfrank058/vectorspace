@@ -133,6 +133,25 @@ export default function ProjectsPage() {
     ]
   }
 
+  const project8Project = {
+    title: "Structural Retrofitting Works",
+    description: "This completed assignment involved structural retrofitting works in Spring Valley and Ruaka, as well as a structural integrity assessment in Karen End. The scope covered jacketing and structural shotcrete application in Spring Valley, mesh installation and shotcreting works in Ruaka, and rebar scanning with detailed reporting in Karen End. The projects were identified as having deficiencies in structural considerations, and our role was to implement the rectifying measures proposed by the project consultants, ensuring compliance and improved structural performance.",
+    images: [
+      "/projects/project 8/project 1.jpeg",
+      "/projects/project 8/project 2.jpeg",
+      "/projects/project 8/project 3.jpeg",
+      "/projects/project 8/project 4.jpeg",
+      "/projects/project 8/project 5.jpeg",
+      "/projects/project 8/project 6.jpeg",
+      "/projects/project 8/project 7.jpeg",
+      "/projects/project 8/project 8.jpeg",
+      "/projects/project 8/project 9.jpeg",
+      "/projects/project 8/project 10.jpeg",
+      "/projects/project 8/project 11.jpeg",
+      "/projects/project 8/project 12.jpeg",
+    ]
+  }
+
   return (
 
     <div className="min-h-screen bg-background text-foreground dark">
@@ -362,6 +381,37 @@ export default function ProjectsPage() {
                     {project7Project.images.map((image, index) => (
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
                         <img src={image} alt={`Project 7 image ${index + 1}`} className="w-full h-48 object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
+                  <img src={project8Project.images[0]} alt="Project 8 image" className="w-full h-64 object-cover" />
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-bold text-foreground mb-2">{project8Project.title}</h3>
+                    <p className="text-muted-foreground">{project8Project.description}</p>
+                  </div>
+                  <div className="p-6 text-center">
+                    <p className="text-muted-foreground">Click to view project gallery</p>
+                  </div>
+                </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                <div className="space-y-6">
+                  <div className="text-center">
+                    <h2 className="text-2xl font-bold text-foreground mb-2">{project8Project.title}</h2>
+                    <p className="text-muted-foreground">{project8Project.description}</p>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {project8Project.images.map((image, index) => (
+                      <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
+                        <img src={image} alt={`Project 8 image ${index + 1}`} className="w-full h-48 object-cover" />
                       </div>
                     ))}
                   </div>
