@@ -2,11 +2,11 @@ export default function Team() {
   const teamMembers = [
     {
       name: "Milton Mulwa",
-      role: "Strategic leadership, Project Design & Costing Oversight and Client Engagement.",
+      role: "CEO",
       title: "Civil & Structural Engineer",
       qualifications: "BSc, EBK, IEK",
       details: {
-        position: "Strategic leadership & company vision",
+        position: "Strategic Leadership, Project Design & Costing Oversight and Client Management",
         education: "BSc Civil Engineering",
         experience: "Over 9 years experience in Construction and Engineering practice",
         specialization: "Civil and Structural Engineering, Project Management, and Leadership",
@@ -18,13 +18,13 @@ export default function Team() {
     },
     {
       name: "Brian Kinyanjui",
-      role: "Structural Analysis & Design, Structural Drawings Drafting, and Determining Engineer's Quantities",
+      role: "Structural Engineer",
       qualifications: "BSc, EBK, IEK",
       details: {
-        position: "Structural Analysis & Design Engineer",
+        position: "Structural Analysis & Design, Structural Drawings Drafting, and Developing Engineer's Quantities",
         education: "BSc Civil Engineering",
         experience: "Over 5 years experience in structural engineering practice",
-        specialization: "Structural Analysis and Design of Building Structures",
+        specialization: "Structural Analysis and Design of Buildings",
         contribution: "Delivering safe, efficient, and code-compliant structural solutions",
         achievement: "Designed and Delivered cost effective and structurally safe solutions",
       },
@@ -34,10 +34,10 @@ export default function Team() {
     },
     {
       name: "Diana Adhiambo",
-      role: "Cost Planning & Management , Project Proposal Preparation and Business Development Support",
+      role: "Quantity Surveyor",
       qualifications: "BSc QS",
       details: {
-        position: "Cost management and budgeting",
+        position: "Cost Planning & Management , Project Proposal Preparation and Business Development Support",
         education: "Bachelor of Science in Quantity Surveying",
         experience: "Over 3 years’ experience in construction cost management",
         specialization: "Project Cost Planning, Budgeting, and Financial Control",

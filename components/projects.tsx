@@ -1,18 +1,18 @@
 export default function Projects() {
   const projects = [
     {
-      title: "Thindigua Apartments",
-      description: "12-storey residential development with EPS technology",
+      title: "Racecourse Apartments",
+      description: "G + 3 Floors contructed using EPS technology full system",
       image: "/thindigua-apartments-construction-site.jpg",
     },
     {
-      title: "Kimbo Hospital",
-      description: "Modern healthcare facility with EPS technology",
+      title: "Residential Villa",
+      description: "Modern luxury villa in Kahaini, Muranga County done using EPS technology hybrid system",
       image: "/kimbo-hospital-construction-site.jpg",
     },
     {
-      title: "Naivasha Villa",
-      description: "Luxury residence in Naivasha",
+      title: "Contemporary luxurious residential villa in Watamu",
+      description: "Contemporary luxurious residential villa in Watamu, Kilifi County, conventional contruction sytem utilizing EPS Slab panels",
       image: "/naivasha-villa-luxury-residence.jpg",
     },
   ]
@@ -21,7 +21,7 @@ export default function Projects() {
 
     <section id="projects" className="py-20 bg-off-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-4">Key Projects</h2>
+<h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-4 text-center">Key Projects</h2>
         <p className="text-medium-gray text-lg mb-12">
           Explore our portfolio of cutting-edge engineering solutions
         </p>
