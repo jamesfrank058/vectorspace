@@ -39,7 +39,7 @@ export default function Services() {
     <section id="services" className="py-20 bg-off-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-4 text-center">Our Services</h2>
-        <p className="text-medium-gray text-lg mb-12">
+        <p className="text-medium-gray text-lg mb-12 text-center">
           Comprehensive engineering solutions tailored to your specific needs
         </p>
 

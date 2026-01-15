@@ -65,7 +65,7 @@ export default function About() {
               </p>
             </div>
           </div>
-<h3 className="text-2xl font-bold text-gold-orange mb-8 text-center">Why Choose VectorSpace?</h3>
+<h3 className="text-2xl font-bold text-white mb-8">Why Choose VectorSpace?</h3>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="flex items-start gap-3">
               <Award className="w-6 h-6 text-gold-orange mt-1 shrink-0" />
@@ -100,7 +100,7 @@ export default function About() {
 
 
         <div className="mt-12">
-<h3 className="text-2xl font-bold text-dark-gray mb-8 text-center">Our Core Values</h3>
+<h3 className="text-3xl font-bold text-dark-gray mb-8 text-center">Our Core Values</h3>
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { title: "Integrity", desc: "Upholding the highest ethical standards with honesty and accountability" },

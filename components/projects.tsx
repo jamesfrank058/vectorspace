@@ -22,7 +22,7 @@ export default function Projects() {
     <section id="projects" className="py-20 bg-off-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-4 text-center">Key Projects</h2>
-        <p className="text-medium-gray text-lg mb-12">
+        <p className="text-medium-gray text-lg mb-12 text-center">
           Explore our portfolio of cutting-edge engineering solutions
         </p>
 
