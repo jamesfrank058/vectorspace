@@ -98,6 +98,9 @@ export default function Header() {
             <a href="/resources" className="text-white hover:text-yellow-300 transition">
               Resources
             </a>
+            <button onClick={() => handleNavigation("faq")} className="text-white hover:text-yellow-300 transition">
+              FAQ
+            </button>
             <button onClick={() => handleNavigation("contact")} className="text-white hover:text-yellow-300 transition">
               Contact
             </button>
@@ -176,6 +179,16 @@ export default function Header() {
                   Resources
                 </span>
               </a>
+
+              <button 
+                onClick={() => handleNavigation("faq")} 
+                className="px-6 py-4 text-left text-white hover:text-yellow-300 hover:bg-white/10 transition-all duration-200 font-medium border-l-4 border-transparent hover:border-yellow-300 hover:pl-8 relative group"
+              >
+                <span className="flex items-center">
+                  <span className="w-2 h-2 bg-yellow-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 mr-3"></span>
+                  FAQ
+                </span>
+              </button>
 
               <button 
                 onClick={() => handleNavigation("contact")} 

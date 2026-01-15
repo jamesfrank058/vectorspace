@@ -29,6 +29,9 @@ export default function Footer() {
               <a href="#projects" className="block hover:text-gold-orange transition-colors duration-300">
                 Projects
               </a>
+              <a href="#faq" className="block hover:text-gold-orange transition-colors duration-300">
+                FAQ
+              </a>
               <a href="#contact" className="block hover:text-gold-orange transition-colors duration-300">
                 Contact
               </a>
