@@ -29,8 +29,7 @@ export default function Team() {
         achievement: "Designed and Delivered cost effective and structurally safe solutions",
       },
       image: "/structural-engineer-brian-kinyanjui.jpg",
-      imagePosition: "center",
-      imageFit: "contain",
+      imageClass: "w-full aspect-square object-contain bg-white group-hover:scale-105 transition-transform duration-300",
     },
     {
       name: "Diana Adhiambo",
@@ -93,7 +92,7 @@ export default function Team() {
               <img
                 src={member.image || "/placeholder.svg"}
                 alt={member.name}
-                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300"
+                className={member.imageClass || "w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300"}
                 style={{ objectPosition: member.imagePosition || 'center' }}
               />
               <div className="p-6">
