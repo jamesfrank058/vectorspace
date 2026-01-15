@@ -80,7 +80,7 @@ export default function Footer() {
           </div>
 
           <div className="border-t border-dark-gray pt-4">
-            <p className="font-bold text-lg">&copy; 2025 VectorSpace Limited. All rights reserved.</p>
+            <p className="font-bold text-lg">&copy; 2026 VectorSpace Limited. All rights reserved.</p>
           </div>
         </div>
       </div>
