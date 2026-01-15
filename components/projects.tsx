@@ -2,7 +2,7 @@ export default function Projects() {
   const projects = [
     {
       title: "Racecourse Apartments",
-      description: "G + 3 Floors contructed using EPS technology full system",
+      description: "G + 3 Floors constructed using EPS technology full system",
       image: "/thindigua-apartments-construction-site.jpg",
     },
     {
@@ -11,8 +11,8 @@ export default function Projects() {
       image: "/kimbo-hospital-construction-site.jpg",
     },
     {
-      title: "Contemporary luxurious residential villa in Watamu",
-      description: "Contemporary luxurious residential villa in Watamu, Kilifi County, conventional contruction sytem utilizing EPS Slab panels",
+      title: "Luxury Villa",
+      description: "Contemporary luxurious residential villa in Watamu, Kilifi County, conventional construction system utilizing EPS Slab panels",
       image: "/naivasha-villa-luxury-residence.jpg",
     },
   ]
