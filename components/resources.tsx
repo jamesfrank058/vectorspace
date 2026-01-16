@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { ExternalLink } from "lucide-react"
 import { Badge } from "./ui/badge"
+import EmailSubmitDialog from "./email-submit-dialog"
 
 interface Resource {
   id: string
@@ -116,6 +117,7 @@ const resources: Resource[] = [
 export default function Resources() {
   const router = useRouter()
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const [submitDialogOpen, setSubmitDialogOpen] = useState(false)
 
   const categories = Array.from(new Set(resources.map((r) => r.category)))
   const filteredResources = selectedCategory
@@ -230,11 +232,20 @@ export default function Resources() {
               If you know of a valuable engineering resource we should include, we'd love to hear about it.
             </p>
             <button
-              onClick={() => router.push("/?type=resource#contact")}
+              onClick={() => setSubmitDialogOpen(true)}
               className="inline-block bg-gold-orange text-dark-gray px-8 py-3 rounded-lg font-semibold hover:bg-amber-hover transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               Suggest a Resource
             </button>
+
+            <EmailSubmitDialog
+              open={submitDialogOpen}
+              onOpenChange={setSubmitDialogOpen}
+              mailtoLink="mailto:info@vectorspace.co.ke?subject=Resource Suggestion - VectorSpace Engineering&body=Hello VectorSpace Team,%0A%0AI'd like to suggest a valuable engineering resource for your resources page.%0A%0AResource Name:%0A%0AResource URL:%0A%0ACategory (Regulatory / Standards / Professional / Industry / Technology / Reference / Tools / Safety / Learning):%0A%0ADescription:%0A%0AWhy this resource is valuable:%0A%0AYour Name:%0A%0AThank you!"
+              gmailLink="https://mail.google.com/mail/?view=cm&fs=1&to=info@vectorspace.co.ke&su=Resource%20Suggestion%20-%20VectorSpace%20Engineering&body=Hello%20VectorSpace%20Team,%0A%0AI'd%20like%20to%20suggest%20a%20valuable%20engineering%20resource%20for%20your%20resources%20page.%0A%0AResource%20Name:%0A%0AResource%20URL:%0A%0ACategory%20(Regulatory%20/%20Standards%20/%20Professional%20/%20Industry%20/%20Technology%20/%20Reference%20/%20Tools%20/%20Safety%20/%20Learning):%0A%0ADescription:%0A%0AWhy%20this%20resource%20is%20valuable:%0A%0AYour%20Name:%0A%0AThank%20you!"
+              title="Suggest a Resource"
+              description="Choose how you'd like to suggest a resource:"
+            />
           </div>
         </div>
       </div>
