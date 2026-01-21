@@ -241,9 +241,9 @@ export default function Resources() {
             <h3 className="text-2xl font-bold text-white mb-3">
               Missing a Resource?
             </h3>
-            <p className="text-gray-200 mb-6">
-              If you know of a valuable engineering resource we should include, we'd love to hear about it.
-            </p>
+          <p className="text-gray-200 mb-6">
+            If you know of a valuable engineering resource we should include, we&#39;d love to hear about it.
+          </p>
             <button
               onClick={() => setSubmitDialogOpen(true)}
               className="inline-block bg-gold-orange text-dark-gray px-8 py-3 rounded-lg font-semibold hover:bg-amber-hover transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"

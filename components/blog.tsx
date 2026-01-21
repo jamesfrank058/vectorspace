@@ -247,7 +247,7 @@ This ensures clients receive accurate, competitive, and defensible cost estimate
   },
   {
     id: "6",
-    title: "Geotechnical Investigation: Why It's Critical Before Breaking Ground",
+    title: "Geotechnical Investigation: Why It&apos;s Critical Before Breaking Ground",
     excerpt: "Foundation failures represent one of the most costly construction disasters. Here's why professional soil investigation is non-negotiable.",
     content: `Geotechnical investigations are often overlooked, yet they're among the most critical project phases. Failures here cascade into catastrophic problems.
 
@@ -523,7 +523,7 @@ export default function Blog() {
             Want to Share Your Engineering Story?
           </h3>
           <p className="text-gray-300 mb-6">
-            Have a project success story or engineering insight? We'd love to feature it.
+            Have a project success story or engineering insight? We&#39;d love to feature it.
           </p>
           <button
             onClick={() => setSubmitDialogOpen(true)}
