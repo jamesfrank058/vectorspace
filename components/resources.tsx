@@ -22,7 +22,7 @@ const resources: Resource[] = [
     title: "VectorSpace Ltd Company Profile",
     description: "Download our comprehensive company profile showcasing our services, projects, team, and engineering capabilities.",
     category: "Documents",
-    url: "/resources/VECTORSPACE LTD COMPANY PROFILE.pdf",
+    url: "/resources/vectorspace-company-profile.pdf",
     icon: "📄",
     download: true,
   },
