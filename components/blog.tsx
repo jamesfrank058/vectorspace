@@ -419,7 +419,7 @@ export default function Blog() {
                   style={{ backgroundColor: "#0B2A4A" }}
                 >
                   {post.image && (
-                    <div className="h-48 bg-gradient-to-br from-brand-blue to-blue-900 flex items-center justify-center overflow-hidden">
+                    <div className="h-48 bg-linear-to-br from-brand-blue to-blue-900 flex items-center justify-center overflow-hidden">
                       <img
                         src={post.image}
                         alt={post.title}
