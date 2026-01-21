@@ -254,10 +254,10 @@ export default function Resources() {
             <EmailSubmitDialog
               open={submitDialogOpen}
               onOpenChange={setSubmitDialogOpen}
-              mailtoLink="mailto:info@vectorspace.co.ke?subject=Resource Suggestion - VectorSpace Engineering&body=Hello VectorSpace Team,%0A%0AI'd like to suggest a valuable engineering resource for your resources page.%0A%0AResource Name:%0A%0AResource URL:%0A%0ACategory (Regulatory / Standards / Professional / Industry / Technology / Reference / Tools / Safety / Learning):%0A%0ADescription:%0A%0AWhy this resource is valuable:%0A%0AYour Name:%0A%0AThank you!"
-              gmailLink="https://mail.google.com/mail/?view=cm&fs=1&to=info@vectorspace.co.ke&su=Resource%20Suggestion%20-%20VectorSpace%20Engineering&body=Hello%20VectorSpace%20Team,%0A%0AI'd%20like%20to%20suggest%20a%20valuable%20engineering%20resource%20for%20your%20resources%20page.%0A%0AResource%20Name:%0A%0AResource%20URL:%0A%0ACategory%20(Regulatory%20/%20Standards%20/%20Professional%20/%20Industry%20/%20Technology%20/%20Reference%20/%20Tools%20/%20Safety%20/%20Learning):%0A%0ADescription:%0A%0AWhy%20this%20resource%20is%20valuable:%0A%0AYour%20Name:%0A%0AThank%20you!"
+              mailtoLink="mailto:info@vectorspace.co.ke?subject=Resource Suggestion - VectorSpace Engineering&body=Hello VectorSpace Team,%0A%0AI&#39;d like to suggest a valuable engineering resource for your resources page.%0A%0AResource Name:%0A%0AResource URL:%0A%0ACategory (Regulatory / Standards / Professional / Industry / Technology / Reference / Tools / Safety / Learning):%0A%0ADescription:%0A%0AWhy this resource is valuable:%0A%0AYour Name:%0A%0AThank you!"
+              gmailLink="https://mail.google.com/mail/?view=cm&fs=1&to=info@vectorspace.co.ke&su=Resource%20Suggestion%20-%20VectorSpace%20Engineering&body=Hello%20VectorSpace%20Team,%0A%0AI&#39;d%20like%20to%20suggest%20a%20valuable%20engineering%20resource%20for%20your%20resources%20page.%0A%0AResource%20Name:%0A%0AResource%20URL:%0A%0ACategory%20(Regulatory%20/%20Standards%20/%20Professional%20/%20Industry%20/%20Technology%20/%20Reference%20/%20Tools%20/%20Safety%20/%20Learning):%0A%0ADescription:%0A%0AWhy%20this%20resource%20is%20valuable:%0A%0AYour%20Name:%0A%0AThank%20you!"
               title="Suggest a Resource"
-              description="Choose how you'd like to suggest a resource:"
+              description="Choose how you&#39;d like to suggest a resource:"
             />
           </div>
         </div>

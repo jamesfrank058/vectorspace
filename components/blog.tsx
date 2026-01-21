@@ -532,13 +532,13 @@ export default function Blog() {
             Submit Article Idea
           </button>
 
-          <EmailSubmitDialog
+            <EmailSubmitDialog
             open={submitDialogOpen}
             onOpenChange={setSubmitDialogOpen}
-            mailtoLink="mailto:info@vectorspace.co.ke?subject=Article Idea Submission - VectorSpace Blog&body=Hello VectorSpace Team,%0A%0AI'd like to submit an article idea for your engineering blog.%0A%0AArticle Title:%0A%0AArticle Category (Case Study / Technology / Industry News / Best Practices):%0A%0ABrief Summary:%0A%0AAuthor Name:%0A%0AAre you an employee/partner or external contributor?:%0A%0AThank you!"
-            gmailLink="https://mail.google.com/mail/?view=cm&fs=1&to=info@vectorspace.co.ke&su=Article%20Idea%20Submission%20-%20VectorSpace%20Blog&body=Hello%20VectorSpace%20Team,%0A%0AI'd%20like%20to%20submit%20an%20article%20idea%20for%20your%20engineering%20blog.%0A%0AArticle%20Title:%0A%0AArticle%20Category%20(Case%20Study%20/%20Technology%20/%20Industry%20News%20/%20Best%20Practices):%0A%0ABrief%20Summary:%0A%0AAuthor%20Name:%0A%0AAre%20you%20an%20employee/partner%20or%20external%20contributor?:%0A%0AThank%20you!"
+            mailtoLink="mailto:info@vectorspace.co.ke?subject=Article Idea Submission - VectorSpace Blog&body=Hello VectorSpace Team,%0A%0AI&#39;d like to submit an article idea for your engineering blog.%0A%0AArticle Title:%0A%0AArticle Category (Case Study / Technology / Industry News / Best Practices):%0A%0ABrief Summary:%0A%0AAuthor Name:%0A%0AAre you an employee/partner or external contributor?:%0A%0AThank you!"
+            gmailLink="https://mail.google.com/mail/?view=cm&fs=1&to=info@vectorspace.co.ke&su=Article%20Idea%20Submission%20-%20VectorSpace%20Blog&body=Hello%20VectorSpace%20Team,%0A%0AI&#39;d%20like%20to%20submit%20an%20article%20idea%20for%20your%20engineering%20blog.%0A%0AArticle%20Title:%0A%0AArticle%20Category%20(Case%20Study%20/%20Technology%20/%20Industry%20News%20/%20Best%20Practices):%0A%0ABrief%20Summary:%0A%0AAuthor%20Name:%0A%0AAre%20you%20an%20employee/partner%20or%20external%20contributor?:%0A%0AThank%20you!"
             title="Submit Article Idea"
-            description="Choose how you'd like to submit your article idea:"
+            description="Choose how you&#39;d like to submit your article idea:"
           />
         </div>
       </div>
