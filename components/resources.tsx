@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { ExternalLink, Download } from "lucide-react"
+import { ExternalLink, Download, FileText } from "lucide-react"
 import { Badge } from "./ui/badge"
 import EmailSubmitDialog from "./email-submit-dialog"
 
@@ -144,6 +144,35 @@ export default function Resources() {
           <p className="text-lg text-muted-foreground max-w-2xl">
             A curated collection of tools, standards, learning materials, and industry resources to support engineering excellence and professional development.
           </p>
+        </div>
+
+        {/* Company Profile Download Card */}
+        <div className="mb-12 rounded-xl p-6 md:p-8 shadow-lg" style={{ backgroundColor: "#0B2A4A" }}>
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="shrink-0">
+              <div className="w-20 h-20 rounded-lg bg-gold-orange/20 flex items-center justify-center">
+                <FileText className="text-gold-orange w-10 h-10" />
+              </div>
+            </div>
+            <div className="grow text-center md:text-left">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                Download Our Company Profile
+              </h3>
+              <p className="text-gray-300 mb-4 md:mb-0">
+                Get the complete overview of our services, projects, team, and engineering capabilities.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <a
+                href="/resources/vectorspace-company-profile.pdf"
+                download="VectorSpace-Company-Profile.pdf"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gold-orange text-white font-semibold rounded-lg hover:bg-gold-orange/90 transition-colors duration-300 shadow-md"
+              >
+                <Download size={20} />
+                Download PDF
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Category Filter */}
