@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { ExternalLink } from "lucide-react"
+import { ExternalLink, Download } from "lucide-react"
 import { Badge } from "./ui/badge"
 import EmailSubmitDialog from "./email-submit-dialog"
 
@@ -13,9 +13,19 @@ interface Resource {
   category: string
   url: string
   icon?: string
+  download?: boolean
 }
 
 const resources: Resource[] = [
+  {
+    id: "13",
+    title: "VectorSpace Ltd Company Profile",
+    description: "Download our comprehensive company profile showcasing our services, projects, team, and engineering capabilities.",
+    category: "Documents",
+    url: "/resources/VECTORSPACE LTD COMPANY PROFILE.pdf",
+    icon: "📄",
+    download: true,
+  },
   {
     id: "1",
     title: "Engineers Board of Kenya (EBK)",
@@ -172,14 +182,17 @@ export default function Resources() {
             <a
               key={resource.id}
               href={resource.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(resource.download ? { download: resource.title } : { target: "_blank", rel: "noopener noreferrer" })}
               className="group rounded-lg border border-light-gray hover:border-brand-blue p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               style={{ backgroundColor: "#0B2A4A" }}
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="text-3xl">{resource.icon}</div>
-                <ExternalLink className="w-5 h-5 text-gray-200 group-hover:text-gold-orange transition-colors" />
+                {resource.download ? (
+                  <Download className="w-5 h-5 text-gray-200 group-hover:text-gold-orange transition-colors" />
+                ) : (
+                  <ExternalLink className="w-5 h-5 text-gray-200 group-hover:text-gold-orange transition-colors" />
+                )}
               </div>
 
               <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gold-orange transition-colors">
@@ -195,7 +208,7 @@ export default function Resources() {
                   {resource.category}
                 </Badge>
                 <span className="text-xs font-semibold text-gold-orange group-hover:text-amber-hover transition-colors">
-                  Visit →
+                  {resource.download ? "Download ↓" : "Visit →"}
                 </span>
               </div>
             </a>
