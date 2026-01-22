@@ -70,6 +70,7 @@ export default function Team() {
         achievement: "Enhanced financial transparency and compliant Tax reporting",
       },
       image: "/accountant-judy-maina-professional.jpg",
+      imagePosition: "center 20%",
     },
   ]
 
