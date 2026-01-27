@@ -151,7 +151,7 @@ export default function BlogPreview() {
                       <span>{post.readTime} min read</span>
                     </div>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-gold-orange group-hover:translate-x-1 transition-transform flex-shrink-0 mt-1" />
+                  <ArrowRight className="w-5 h-5 text-gold-orange group-hover:translate-x-1 transition-transform shrink-0 mt-1" />
                 </div>
               ))}
           </div>
