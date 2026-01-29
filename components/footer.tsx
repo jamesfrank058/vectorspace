@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-1">
-            <img src="/icon-light-32x32.png" alt="VectorSpace Logo" className="w-12 h-12 rounded" />
+            <img src="/icon.svg" alt="VectorSpace Logo" className="w-12 h-12 rounded" />
             <span className="font-bold text-xl text-gold-orange">VECTOR<span className="text-white">SPACE</span></span>
           </div>
             <p className="text-light-gray">Engineering, Precision & Innovation</p>

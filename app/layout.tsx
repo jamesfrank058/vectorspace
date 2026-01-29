@@ -15,20 +15,10 @@ export const metadata: Metadata = {
     "Delivering innovative, sustainable, and cost-effective infrastructure across East Africa. Multidisciplinary engineering, construction, and consultancy firm.",
   generator: "v0.app",
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.svg",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
+    icon: {
+      url: "/icon.svg",
+      type: "image/svg+xml",
+    },
     apple: "/apple-icon.png",
   },
 }
