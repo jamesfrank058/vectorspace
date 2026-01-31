@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { MapPin, Phone, Mail, Clock, MessageCircle, ArrowRight, CircleDot, Download, FileText } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, MessageCircle, ArrowRight, CircleDot } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 // Kenyan public holidays for 2024-2025
@@ -205,25 +205,6 @@ function OfficeStatus() {
 }
 
 function WorkingHours() {
-  const [currentTime, setCurrentTime] = useState<string>("")
-
-  useEffect(() => {
-    const updateTime = () => {
-      const kenyanTime = getKenyanTime()
-      setCurrentTime(kenyanTime.toLocaleTimeString('en-US', { 
-        hour: '2-digit', 
-        minute: '2-digit',
-        hour12: true,
-        timeZone: 'Africa/Nairobi'
-      }))
-    }
-
-    updateTime()
-    const interval = setInterval(updateTime, 60000)
-
-    return () => clearInterval(interval)
-  }, [])
-
   return (
     <div className="flex gap-4">
       <Clock className="text-gold-orange shrink-0 mt-1" size={24} />

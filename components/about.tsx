@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Award, Lightbulb, Trophy, Users, Eye, Target } from "lucide-react"
 
 export default function About() {
@@ -33,9 +34,11 @@ export default function About() {
             </div>
           </div>
           <div className="bg-off-white h-96 rounded-lg flex items-center justify-center">
-            <img
+            <Image
               src="/engineering-team-reviewing-architectural-plans.jpg"
               alt="VectorSpace engineering team"
+              width={1200}
+              height={800}
               className="w-full h-full object-cover rounded-lg"
             />
           </div>

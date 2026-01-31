@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { useRouter } from "next/navigation"
 import { ExternalLink, Download, FileText } from "lucide-react"
 import { Badge } from "./ui/badge"
 import EmailSubmitDialog from "./email-submit-dialog"
@@ -125,7 +124,6 @@ const resources: Resource[] = [
 ]
 
 export default function Resources() {
-  const router = useRouter()
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   const [submitDialogOpen, setSubmitDialogOpen] = useState(false)
 

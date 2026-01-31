@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Projects() {
   const projects = [
@@ -36,7 +37,7 @@ export default function Projects() {
               className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-light-gray hover:border-brand-blue group"
               style={{ backgroundColor: "#0B2A4A" }}
             >
-              <img src={project.image || "/placeholder.svg"} alt={project.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+              <Image src={project.image || "/placeholder.svg"} alt={project.title} width={800} height={400} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
                 <p className="text-gray-200">{project.description}</p>

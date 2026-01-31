@@ -1,5 +1,6 @@
 import Header from "../../components/header"
 import Footer from "../../components/footer"
+import Image from "next/image"
 import { Dialog, DialogContent, DialogTrigger } from "../../components/ui/dialog"
 
 export default function ProjectsPage() {
@@ -211,7 +212,7 @@ export default function ProjectsPage() {
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
-                  <img src={project.images[5]} alt="Main project image" className="w-full h-64 object-cover" />
+                  <Image src={project.images[5]} alt="Main project image" width={1200} height={640} className="w-full h-64 object-cover" />
                   <div className="p-6 text-center">
                     <p className="text-muted-foreground">This completed Ground + 3 Storey apartment project involved full structural design, council approvals, and thorough site supervision. Built using EPS Building Technology for both walls and slabs, the development also required specialized foundation treatment due to 2.4m of black cotton soil. Valued at KSh 60 million, the project was successfully delivered to high standards using efficient and modern construction methods.</p>
                   </div>
@@ -230,7 +231,7 @@ export default function ProjectsPage() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {project.images.map((image, index) => (
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
-                        <img src={image} alt={`Project image ${index + 1}`} className="w-full h-48 object-cover" />
+                        <Image src={image} alt={`Project image ${index + 1}`} width={800} height={400} className="w-full h-48 object-cover" />
                       </div>
                     ))}
                   </div>
@@ -241,7 +242,7 @@ export default function ProjectsPage() {
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
-                  <img src={kaziProject.images[0]} alt="Kazi project image" className="w-full h-64 object-cover" />
+                  <Image src={kaziProject.images[0]} alt="Kazi project image" width={1200} height={640} className="w-full h-64 object-cover" />
                   <div className="p-6 text-center">
                     <h3 className="text-xl font-bold text-foreground mb-2">{kaziProject.title}</h3>
                     <p className="text-muted-foreground">{kaziProject.description}</p>
@@ -261,7 +262,7 @@ export default function ProjectsPage() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {kaziProject.images.map((image, index) => (
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
-                        <img src={image} alt={`Kazi project image ${index + 1}`} className="w-full h-48 object-cover" />
+                        <Image src={image} alt={`Kazi project image ${index + 1}`} width={800} height={400} className="w-full h-48 object-cover" />
                       </div>
                     ))}
                   </div>
@@ -272,7 +273,7 @@ export default function ProjectsPage() {
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
-                  <img src={jobProject.images[0]} alt="Job project image" className="w-full h-64 object-cover" />
+                  <Image src={jobProject.images[0]} alt="Job project image" width={1200} height={640} className="w-full h-64 object-cover" />
                   <div className="p-6 text-center">
                     <h3 className="text-xl font-bold text-foreground mb-2">{jobProject.title}</h3>
                     <p className="text-muted-foreground">{jobProject.description}</p>
@@ -293,7 +294,7 @@ export default function ProjectsPage() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {jobProject.images.map((image, index) => (
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
-                        <img src={image} alt={`Job project image ${index + 1}`} className="w-full h-48 object-cover" />
+                        <Image src={image} alt={`Job project image ${index + 1}`} width={800} height={400} className="w-full h-48 object-cover" />
                       </div>
                     ))}
                   </div>
@@ -304,7 +305,7 @@ export default function ProjectsPage() {
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
-                  <img src={ujenziProject.images[0]} alt="Ujenzi project image" className="w-full h-64 object-cover" />
+                  <Image src={ujenziProject.images[0]} alt="Ujenzi project image" width={1200} height={640} className="w-full h-64 object-cover" />
                   <div className="p-6 text-center">
                     <h3 className="text-xl font-bold text-foreground mb-2">{ujenziProject.title}</h3>
                     <p className="text-muted-foreground">{ujenziProject.description}</p>
@@ -325,7 +326,7 @@ export default function ProjectsPage() {
                     {ujenziProject.images.map((image, index) => (
 
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
-                        <img src={image} alt={`Ujenzi project image ${index + 1}`} className="w-full h-48 object-cover" />
+                        <Image src={image} alt={`Ujenzi project image ${index + 1}`} width={800} height={400} className="w-full h-48 object-cover" />
                       </div>
                     ))}
 
@@ -338,7 +339,7 @@ export default function ProjectsPage() {
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
-                  <img src={houseProject.images[0]} alt="House project image" className="w-full h-64 object-cover" />
+                  <Image src={houseProject.images[0]} alt="House project image" width={1200} height={640} className="w-full h-64 object-cover" />
                   <div className="p-6 text-center">
                     <h3 className="text-xl font-bold text-foreground mb-2">{houseProject.title}</h3>
                     <p className="text-muted-foreground">{houseProject.description}</p>
@@ -358,7 +359,7 @@ export default function ProjectsPage() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {houseProject.images.map((image, index) => (
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
-                        <img src={image} alt={`House project image ${index + 1}`} className="w-full h-48 object-cover" />
+                        <Image src={image} alt={`House project image ${index + 1}`} width={800} height={400} className="w-full h-48 object-cover" />
                       </div>
                     ))}
                   </div>
@@ -371,7 +372,7 @@ export default function ProjectsPage() {
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
-                  <img src={nyumbaProject.images[0]} alt="Church project image" className="w-full h-64 object-cover" />
+                  <Image src={nyumbaProject.images[0]} alt="Church project image" width={1200} height={640} className="w-full h-64 object-cover" />
                   <div className="p-6 text-center">
                     <h3 className="text-xl font-bold text-foreground mb-2">{nyumbaProject.title}</h3>
                     <p className="text-muted-foreground">{nyumbaProject.description}</p>
@@ -391,7 +392,7 @@ export default function ProjectsPage() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {nyumbaProject.images.map((image, index) => (
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
-                        <img src={image} alt={`Church project image ${index + 1}`} className="w-full h-48 object-cover" />
+                        <Image src={image} alt={`Church project image ${index + 1}`} width={800} height={400} className="w-full h-48 object-cover" />
                       </div>
                     ))}
                   </div>
@@ -403,7 +404,7 @@ export default function ProjectsPage() {
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
-                  <img src={project7Project.images[0]} alt="Project 7 image" className="w-full h-64 object-cover" />
+                  <Image src={project7Project.images[0]} alt="Project 7 image" width={1200} height={640} className="w-full h-64 object-cover" />
                   <div className="p-6 text-center">
                     <h3 className="text-xl font-bold text-foreground mb-2">{project7Project.title}</h3>
                     <p className="text-muted-foreground">{project7Project.description}</p>
@@ -423,7 +424,7 @@ export default function ProjectsPage() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {project7Project.images.map((image, index) => (
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
-                        <img src={image} alt={`Project 7 image ${index + 1}`} className="w-full h-48 object-cover" />
+                        <Image src={image} alt={`Project 7 image ${index + 1}`} width={800} height={400} className="w-full h-48 object-cover" />
                       </div>
                     ))}
                   </div>
@@ -434,7 +435,7 @@ export default function ProjectsPage() {
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
-                  <img src={project8Project.images[0]} alt="Project 8 image" className="w-full h-64 object-cover" />
+                  <Image src={project8Project.images[0]} alt="Project 8 image" width={1200} height={640} className="w-full h-64 object-cover" />
                   <div className="p-6 text-center">
                     <h3 className="text-xl font-bold text-foreground mb-2">{project8Project.title}</h3>
                     <p className="text-muted-foreground">{project8Project.description}</p>
@@ -454,7 +455,7 @@ export default function ProjectsPage() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {project8Project.images.map((image, index) => (
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
-                        <img src={image} alt={`Project 8 image ${index + 1}`} className="w-full h-48 object-cover" />
+                        <Image src={image} alt={`Project 8 image ${index + 1}`} width={800} height={400} className="w-full h-48 object-cover" />
                       </div>
                     ))}
                   </div>
@@ -465,7 +466,7 @@ export default function ProjectsPage() {
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
-                  <img src={project9Project.images[0]} alt="Project 9 image" className="w-full h-64 object-cover" />
+                  <Image src={project9Project.images[0]} alt="Project 9 image" width={1200} height={640} className="w-full h-64 object-cover" />
                   <div className="p-6 text-center">
                     <h3 className="text-xl font-bold text-foreground mb-2">{project9Project.title}</h3>
                     <p className="text-muted-foreground">{project9Project.description}</p>
@@ -485,7 +486,7 @@ export default function ProjectsPage() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {project9Project.images.map((image, index) => (
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
-                        <img src={image} alt={`Project 9 image ${index + 1}`} className="w-full h-48 object-cover" />
+                        <Image src={image} alt={`Project 9 image ${index + 1}`} width={800} height={400} className="w-full h-48 object-cover" />
                       </div>
                     ))}
                   </div>
@@ -496,7 +497,7 @@ export default function ProjectsPage() {
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
-                  <img src={project10Project.images[0]} alt="Project 10 image" className="w-full h-64 object-cover" />
+                  <Image src={project10Project.images[0]} alt="Project 10 image" width={1200} height={640} className="w-full h-64 object-cover" />
                   <div className="p-6 text-center">
                     <h3 className="text-xl font-bold text-foreground mb-2">{project10Project.title}</h3>
                     <p className="text-muted-foreground">{project10Project.description}</p>
@@ -530,7 +531,7 @@ export default function ProjectsPage() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {project10Project.images.map((image, index) => (
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
-                        <img src={image} alt={`Project 10 image ${index + 1}`} className="w-full h-48 object-cover" />
+                        <Image src={image} alt={`Project 10 image ${index + 1}`} width={800} height={400} className="w-full h-48 object-cover" />
                       </div>
                     ))}
                   </div>

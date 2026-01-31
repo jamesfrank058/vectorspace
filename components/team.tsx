@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function Team() {
   const teamMembers = [
     {
@@ -90,9 +92,11 @@ export default function Team() {
               className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-light-gray hover:border-brand-blue group"
               style={{ backgroundColor: "#0B2A4A" }}
             >
-              <img
+              <Image
                 src={member.image || "/placeholder.svg"}
                 alt={member.name}
+                width={500}
+                height={500}
                 className={member.imageClass || "w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300"}
                 style={{ objectPosition: member.imagePosition || 'center' }}
               />

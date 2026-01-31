@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Calendar, User, ArrowRight, Search } from "lucide-react"
 import { Badge } from "./ui/badge"
 import EmailSubmitDialog from "./email-submit-dialog"
@@ -420,9 +421,11 @@ export default function Blog() {
                 >
                   {post.image && (
                     <div className="h-48 bg-linear-to-br from-brand-blue to-blue-900 flex items-center justify-center overflow-hidden">
-                      <img
+                      <Image
                         src={post.image}
                         alt={post.title}
+                        width={1200}
+                        height={320}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>

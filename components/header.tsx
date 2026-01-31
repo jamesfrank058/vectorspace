@@ -4,6 +4,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { usePathname, useRouter } from "next/navigation"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import Socials from "./socials"
 
@@ -81,9 +82,9 @@ export default function Header() {
     // Try SPA navigation first, fall back to hard navigation for static exports
     const full = `${window.location.origin}${path.startsWith('/') ? path : '/' + path}`
     try {
-      const res = (router.push as any)(path)
-      if (res && typeof res.then === 'function') {
-        res.catch(() => { window.location.href = full })
+      const res = router.push(path)
+      if (res && typeof (res as Promise<unknown>).then === 'function') {
+        (res as Promise<unknown>).catch(() => { window.location.href = full })
       } else {
         // if router.push isn't a promise, verify navigation happened and fallback if not
         setTimeout(() => {
@@ -92,7 +93,7 @@ export default function Header() {
           }
         }, 150)
       }
-    } catch (err) {
+    } catch {
       window.location.href = full
     }
 
@@ -131,7 +132,7 @@ export default function Header() {
 
 
           <button onClick={handleLogoClick} className="flex items-center gap-1 hover:opacity-80 transition-opacity cursor-pointer">
-            <img src="/icon-light-32x32.png" alt="VectorSpace Logo" className="w-12 h-12 rounded" />
+            <Image src="/icon-light-32x32.png" alt="VectorSpace Logo" width={48} height={48} className="rounded" />
             <span className="font-bold text-xl">
               <span className="text-white">VECTOR</span>
               <span className="text-gold-orange">SPACE</span>

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react"
 import Socials from "./socials"
 
@@ -10,7 +11,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-1">
-            <img src="/icon-light-32x32.png" alt="VectorSpace Logo" className="w-12 h-12 rounded" />
+            <Image src="/icon-light-32x32.png" alt="VectorSpace Logo" width={48} height={48} className="rounded" />
             <span className="font-bold text-xl text-gold-orange">VECTOR<span className="text-white">SPACE</span></span>
           </div>
             <p className="text-light-gray">Engineering, Precision & Innovation</p>
