@@ -42,16 +42,28 @@ export default function Header() {
 
 
 
+  // Improved navigation: scroll to anchors reliably even when navigating from other pages or from a static export
   const handleNavigation = (anchor: string) => {
-    if (pathname === "/projects") {
-      router.push(`/#${anchor}`)
-    } else {
+    // close menu first for a smoother UX
+    setIsOpen(false)
+
+    // If we're on the homepage, try to scroll directly to the element
+    if (pathname === '/') {
       const element = document.getElementById(anchor)
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' })
+        // update the hash without causing a reload
+        history.replaceState(null, '', `#${anchor}`)
+        return
       }
+      // If element not found (maybe not rendered yet), still set the hash so the effect will attempt to scroll
+      history.replaceState(null, '', `#${anchor}`)
+      return
     }
-    setIsOpen(false)
+
+    // We're on a different page: navigate to the root with the hash.
+    // Use a full page navigation so static exports from the `out` folder still work.
+    window.location.href = `${window.location.origin}/#${anchor}`
   }
 
 
@@ -63,6 +75,53 @@ export default function Header() {
     router.push('/')
     setIsOpen(false)
   }
+
+  // Helper to navigate to absolute paths reliably (works on static exports)
+  const navigateTo = (path: string) => {
+    // Try SPA navigation first, fall back to hard navigation for static exports
+    const full = `${window.location.origin}${path.startsWith('/') ? path : '/' + path}`
+    try {
+      const res = (router.push as any)(path)
+      if (res && typeof res.then === 'function') {
+        res.catch(() => { window.location.href = full })
+      } else {
+        // if router.push isn't a promise, verify navigation happened and fallback if not
+        setTimeout(() => {
+          if (window.location.pathname !== path && window.location.pathname !== `${path}/`) {
+            window.location.href = full
+          }
+        }, 150)
+      }
+    } catch (err) {
+      window.location.href = full
+    }
+
+    setIsOpen(false)
+  }
+
+  // When we land on the homepage (or when the hash changes), try to scroll to the element referenced by the hash.
+  useEffect(() => {
+    const tryScrollHash = () => {
+      if (typeof window === 'undefined') return
+      if (window.location.pathname !== '/') return
+      const hash = window.location.hash
+      if (!hash) return
+      const id = hash.replace('#', '')
+      const el = document.getElementById(id)
+      if (el) {
+        // slight delay lets content render before scrolling
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 50)
+      }
+    }
+
+    // run once on mount/pathname change
+    tryScrollHash()
+
+    // listen for hash changes (e.g., when navigation sets the hash)
+    window.addEventListener('hashchange', tryScrollHash)
+
+    return () => window.removeEventListener('hashchange', tryScrollHash)
+  }, [pathname])
 
   return (
 
@@ -95,9 +154,9 @@ export default function Header() {
             <button onClick={() => handleNavigation("projects")} className="text-white hover:text-yellow-300 transition">
               Projects
             </button>
-            <a href="/resources" className="text-white hover:text-yellow-300 transition">
+            <button onClick={() => navigateTo('/resources')} className="text-white hover:text-yellow-300 transition text-left">
               Resources
-            </a>
+            </button>
             <button onClick={() => handleNavigation("faq")} className="text-white hover:text-yellow-300 transition">
               FAQ
             </button>
@@ -168,16 +227,15 @@ export default function Header() {
                 </span>
               </button>
 
-              <a 
-                href="/resources"
-                onClick={() => setIsOpen(false)}
+              <button
+                onClick={() => navigateTo('/resources')}
                 className="px-6 py-3 text-left text-white hover:text-yellow-300 hover:bg-white/10 transition-all duration-200 font-medium border-l-4 border-transparent hover:border-yellow-300 hover:pl-8 relative group block"
               >
                 <span className="flex items-center">
                   <span className="w-2 h-2 bg-yellow-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 mr-3"></span>
                   Resources
                 </span>
-              </a>
+              </button>
 
               <button 
                 onClick={() => handleNavigation("faq")} 

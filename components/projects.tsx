@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Projects() {
   const projects = [
     {
@@ -45,12 +47,12 @@ export default function Projects() {
 
 
         <div className="text-center mb-12">
-          <a
+          <Link
             href="/projects"
             className="inline-block bg-gold-orange text-dark-gray px-8 py-3 rounded-lg font-semibold hover:bg-amber-hover transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             More projects & Gallery
-          </a>
+          </Link>
         </div>
 
 
