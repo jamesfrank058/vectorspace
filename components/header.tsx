@@ -111,7 +111,6 @@ export default function Header() {
             <Socials />
           </div>
 
-
           {/* Mobile Menu Button */}
           <button className="md:hidden" onClick={handleMenuToggle} aria-label="Toggle menu">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -127,10 +126,10 @@ export default function Header() {
         <div 
           ref={menuRef}
           className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-            isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            isOpen ? 'max-h-[calc(100vh-4rem)] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="border-t border-gray-600 backdrop-blur-sm shadow-lg" style={{ backgroundColor: "rgba(11, 42, 74, 0.95)" }}>
+          <div className="border-t border-gray-600 backdrop-blur-sm shadow-lg max-h-[calc(100vh-4rem)] overflow-auto" style={{ backgroundColor: "rgba(11, 42, 74, 0.95)" }}>
             <nav className="py-2 flex flex-col">
               <button 
                 onClick={() => handleNavigation("about")} 
@@ -203,9 +202,11 @@ export default function Header() {
             
             {/* Mobile Socials */}
             <div className="px-6 py-4 border-t border-gray-600">
-              <div className="flex items-center gap-3">
-                <span className="text-sm text-gray-300 font-medium">Follow us:</span>
-                <Socials />
+              <div className="flex items-center justify-between gap-4">
+                <span className="text-sm text-white font-medium">Follow us:</span>
+                <div className="ml-4">
+                  <Socials compact />
+                </div>
               </div>
             </div>
           </div>

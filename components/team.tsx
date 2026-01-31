@@ -61,7 +61,7 @@ export default function Team() {
     {
       name: "Judy Maina",
       role: "Accountant",
-      qualifications: "BSc, CPA",
+      qualifications: "BCom, CPA",
       details: {
         position: "Financial management",
         education: "Bachelor of Science in Accounting",

@@ -95,19 +95,23 @@ export default function ProjectsPage() {
   }
 
 
+
   const nyumbaProject = {
-    title: "structural retrofitting",
-    description: "This completed project involved the structural retrofitting of reinforced concrete columns in Gacharage, Kiambu County. The scope included the machine application of structural shotcrete to strengthen columns that were not originally designed to support additional floors. Following the consulting engineer's proposal, the columns at the basement and ground floor levels were retrofitted using jacketing techniques, with VectorSpace Ltd providing the shotcrete application solution. The project was successfully delivered at a value of KSh 1.0 million.",
+    title: "Church Project - Thindigua (GCI)",
+    description: "This ongoing church project is located along Kiambu Road at Thindigua (GCI) and has a seating capacity of 600 congregants. The scope involves the construction of EPS wall panels, where VectorSpace Ltd was contracted to remove the existing tent structure and install EPS panel walls, followed by shotcreting to achieve the permanent enclosure.",
     images: [
-      "/projects/project 6/nyumba 1.jpeg",
-      "/projects/project 6/nyumba 2.jpeg",
-      "/projects/project 6/nyumba 3.jpeg",
-      "/projects/project 6/nyumba 4.jpeg",
-      "/projects/project 6/nyumba 5.jpeg",
-      "/projects/project 6/nyumba 6.jpeg",
-      "/projects/project 6/nyumba 7.jpeg",
-      "/projects/project 6/nyumba 8.jpeg",
-      "/projects/project 6/nyumba 9.jpeg",
+      "/projects/project 6/1.jpeg",
+      "/projects/project 6/2.jpeg",
+      "/projects/project 6/3.jpeg",
+      "/projects/project 6/4.jpeg",
+      "/projects/project 6/5.jpeg",
+      "/projects/project 6/6.jpeg",
+      "/projects/project 6/7.jpeg",
+      "/projects/project 6/8.jpeg",
+      "/projects/project 6/9.jpeg",
+      "/projects/project 6/10.jpeg",
+      "/projects/project 6/11.jpeg",
+      "/projects/project 6/12.jpeg",
     ]
   }
 
@@ -167,6 +171,27 @@ export default function ProjectsPage() {
       "/projects/project 9/9.jpeg",
       "/projects/project 9/10.jpeg",
     ]
+  }
+
+  const project10Project = {
+    title: "Luxury Penthouse - Kileleshwa",
+    description: "This project involves a luxurious penthouse development in Kileleshwa, comprising two 2-bedroom units located at the top of an 18-storey building and offering breathtaking views of Nairobi's skyline. VectorSpace Ltd was sub-contracted to execute the EPS wall panel works as part of the construction. The project has been completed structurally, with finishing works currently ongoing.",
+    images: [
+      "/projects/project 10/1.jpeg",
+      "/projects/project 10/2.jpeg",
+      "/projects/project 10/3.jpeg",
+      "/projects/project 10/4.jpeg",
+      "/projects/project 10/5.jpeg",
+      "/projects/project 10/6.jpeg",
+      "/projects/project 10/7.jpeg",
+      "/projects/project 10/8.jpeg",
+      "/projects/project 10/9.jpeg",
+      "/projects/project 10/10.jpeg",
+      "/projects/project 10/11.jpeg",
+      "/projects/project 10/12.jpeg",
+      "/projects/project 10/13.jpeg",
+    ],
+    video: "/projects/project 10/14.mp4"
   }
 
   return (
@@ -342,10 +367,11 @@ export default function ProjectsPage() {
               </DialogContent>
             </Dialog>
 
+
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
-                  <img src={nyumbaProject.images[0]} alt="Nyumba project image" className="w-full h-64 object-cover" />
+                  <img src={nyumbaProject.images[0]} alt="Church project image" className="w-full h-64 object-cover" />
                   <div className="p-6 text-center">
                     <h3 className="text-xl font-bold text-foreground mb-2">{nyumbaProject.title}</h3>
                     <p className="text-muted-foreground">{nyumbaProject.description}</p>
@@ -365,7 +391,7 @@ export default function ProjectsPage() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {nyumbaProject.images.map((image, index) => (
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
-                        <img src={image} alt={`Nyumba project image ${index + 1}`} className="w-full h-48 object-cover" />
+                        <img src={image} alt={`Church project image ${index + 1}`} className="w-full h-48 object-cover" />
                       </div>
                     ))}
                   </div>
@@ -460,6 +486,51 @@ export default function ProjectsPage() {
                     {project9Project.images.map((image, index) => (
                       <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
                         <img src={image} alt={`Project 9 image ${index + 1}`} className="w-full h-48 object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <div className="cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition border border-border">
+                  <img src={project10Project.images[0]} alt="Project 10 image" className="w-full h-64 object-cover" />
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-bold text-foreground mb-2">{project10Project.title}</h3>
+                    <p className="text-muted-foreground">{project10Project.description}</p>
+                  </div>
+                  <div className="p-6 text-center">
+                    <p className="text-muted-foreground">Click to view project gallery & video</p>
+                  </div>
+                </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                <div className="space-y-6">
+                  <div className="text-center">
+                    <h2 className="text-2xl font-bold text-foreground mb-2">{project10Project.title}</h2>
+                    <p className="text-muted-foreground">{project10Project.description}</p>
+                  </div>
+
+                  {project10Project.video && (
+                    <div className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
+                      <video 
+                        controls 
+                        autoPlay 
+                        muted 
+                        className="w-full h-auto"
+                      >
+                        <source src={project10Project.video} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  )}
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {project10Project.images.map((image, index) => (
+                      <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg border border-border">
+                        <img src={image} alt={`Project 10 image ${index + 1}`} className="w-full h-48 object-cover" />
                       </div>
                     ))}
                   </div>
