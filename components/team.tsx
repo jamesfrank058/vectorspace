@@ -82,7 +82,7 @@ export default function Team() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-4">Our Leadership Team</h2>
-          <p className="text-medium-gray text-lg">Met the experts driving our success</p>
+          <p className="text-medium-gray text-lg">Meet the experts driving our success</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
