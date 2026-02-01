@@ -157,7 +157,7 @@ export default function Header() {
             <button onClick={() => handleNavigation("projects")} className="text-white hover:text-yellow-300 transition">
               Projects
             </button>
-            <button onClick={() => navigateTo('/resources#blog')} className="text-white hover:text-yellow-300 transition text-left">
+            <button onClick={() => navigateTo('/#blog-preview')} className="text-white hover:text-yellow-300 transition text-left">
               Resources
             </button>
             <button onClick={() => handleNavigation("faq")} className="text-white hover:text-yellow-300 transition">
@@ -231,7 +231,7 @@ export default function Header() {
               </button>
 
               <button
-                onClick={() => navigateTo('/resources#blog')}
+                onClick={() => navigateTo('/#blog-preview')}
                 className="px-6 py-3 text-left text-white hover:text-yellow-300 hover:bg-white/10 transition-all duration-200 font-medium border-l-4 border-transparent hover:border-yellow-300 hover:pl-8 relative group block"
               >
                 <span className="flex items-center">
