@@ -77,31 +77,6 @@ export default function Header() {
     setIsOpen(false)
   }
 
-  // Helper to navigate to absolute paths reliably (works on static exports)
-  const navigateTo = (path: string) => {
-    // Try SPA navigation first, fall back to hard navigation for static exports
-    const full = `${window.location.origin}${path.startsWith('/') ? path : '/' + path}`
-    try {
-      // router.push may return a promise in some runtime environments — treat the return as unknown and narrow safely
-      const res = ((router.push as unknown) as Promise<unknown> | void)(path)
-      const thenable = res && typeof (res as Promise<unknown>).then === 'function'
-      if (thenable) {
-        (res as Promise<unknown>).catch(() => { window.location.href = full })
-      } else {
-        // if router.push isn't a promise, verify navigation happened and fallback if not
-        setTimeout(() => {
-          if (window.location.pathname !== path && window.location.pathname !== `${path}/`) {
-            window.location.href = full
-          }
-        }, 150)
-      }
-    } catch {
-      window.location.href = full
-    }
-
-    setIsOpen(false)
-  }
-
   // When we land on the homepage (or when the hash changes), try to scroll to the element referenced by the hash.
   useEffect(() => {
     const tryScrollHash = () => {
@@ -157,7 +132,7 @@ export default function Header() {
             <button onClick={() => handleNavigation("projects")} className="text-white hover:text-yellow-300 transition">
               Projects
             </button>
-            <button onClick={() => navigateTo('/#blog-preview')} className="text-white hover:text-yellow-300 transition text-left">
+            <button onClick={() => handleNavigation("blog-preview")} className="text-white hover:text-yellow-300 transition text-left">
               Resources
             </button>
             <button onClick={() => handleNavigation("faq")} className="text-white hover:text-yellow-300 transition">
@@ -231,7 +206,7 @@ export default function Header() {
               </button>
 
               <button
-                onClick={() => navigateTo('/#blog-preview')}
+                onClick={() => handleNavigation("blog-preview")}
                 className="px-6 py-3 text-left text-white hover:text-yellow-300 hover:bg-white/10 transition-all duration-200 font-medium border-l-4 border-transparent hover:border-yellow-300 hover:pl-8 relative group block"
               >
                 <span className="flex items-center">
